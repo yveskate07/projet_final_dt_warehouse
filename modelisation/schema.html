@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Schéma en Étoile - SENEGAL EXPORT</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #f5f7fa;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    min-height: 100vh;
+  }
+  h1 {
+    color: #1a3a5c;
+    font-size: 22px;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+  }
+  .subtitle {
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 30px;
+  }
+  .diagram-wrapper {
+    position: relative;
+    width: 860px;
+    height: 620px;
+  }
+  svg.connectors {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .table-box {
+    position: absolute;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    z-index: 1;
+  }
+  .table-header {
+    padding: 8px 12px;
+    font-weight: 700;
+    font-size: 13px;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 0.5px;
+  }
+  .table-body {
+    padding: 10px 14px;
+    font-size: 12px;
+    line-height: 1.9;
+  }
+  .pk { color: #e67e00; font-weight: 700; }
+  .fk { color: #c0392b; font-weight: 600; }
+  .measure { color: #1a5276; font-weight: 600; }
+  hr.divider {
+    border: none;
+    border-top: 1px dashed #ccc;
+    margin: 4px 0;
+  }
+
+  /* FACT TABLE - center */
+  .fact {
+    left: 330px; top: 180px;
+    width: 200px;
+  }
+  .fact .table-header { background: #1a3a5c; }
+  .fact .table-body { background: #fdf3e3; }
+
+  /* DIMENSIONS */
+  .dim { width: 190px; }
+  .dim .table-header { background: #154360; }
+  .dim .table-body { background: #d6eaf8; }
+
+  .dim-tl { top: 20px; left: 20px; }
+  .dim-tr { top: 20px; right: 20px; }
+  .dim-bl { bottom: 20px; left: 20px; }
+  .dim-br { bottom: 20px; right: 20px; }
+  .dim-bc { bottom: 20px; left: 335px; }
+</style>
+</head>
+<body>
+
+<h1>Schéma en Étoile — SENEGAL EXPORT</h1>
+<p class="subtitle">Projet 4 : Agro-Industrie (Export) · Modélisation Data Warehouse</p>
+
+<div class="diagram-wrapper">
+
+  <!-- SVG ARROWS -->
+  <svg class="connectors" id="svg-conn"></svg>
+
+  <!-- FACT TABLE -->
+  <div class="table-box fact" id="fact">
+    <div class="table-header">Fait_Campagne</div>
+    <div class="table-body">
+      <div class="measure">tonnage_recolte</div>
+      <div class="measure">tonnage_exporte</div>
+      <div class="measure">cout_intrants</div>
+      <hr class="divider">
+      <div class="fk">id_parcelle FK</div>
+      <div class="fk">id_produit FK</div>
+      <div class="fk">id_meteo FK</div>
+      <div class="fk">id_date FK</div>
+      <div class="fk">id_fournisseur FK</div>
+    </div>
+  </div>
+
+  <!-- TOP LEFT: Dim_Parcelles -->
+  <div class="table-box dim dim-tl" id="dim-tl">
+    <div class="table-header">Dim_Parcelles</div>
+    <div class="table-body">
+      <div class="pk">🗝 id_parcelle PK</div>
+      <div>surface</div>
+      <div>localisation</div>
+      <div>type_sol</div>
+    </div>
+  </div>
+
+  <!-- TOP RIGHT: Dim_Produits -->
+  <div class="table-box dim dim-tr" id="dim-tr">
+    <div class="table-header">Dim_Produits</div>
+    <div class="table-body">
+      <div class="pk">🗝 id_produit PK</div>
+      <div>variete</div>
+    </div>
+  </div>
+
+  <!-- BOTTOM LEFT: Dim_Météo -->
+  <div class="table-box dim dim-bl" id="dim-bl">
+    <div class="table-header">Dim_Météo</div>
+    <div class="table-body">
+      <div class="pk">🗝 id_meteo PK</div>
+      <div>pluviometrie</div>
+      <div>temperature_moyenne</div>
+    </div>
+  </div>
+
+  <!-- BOTTOM RIGHT: Dim_Date -->
+  <div class="table-box dim dim-br" id="dim-br">
+    <div class="table-header">Dim_Date</div>
+    <div class="table-body">
+      <div class="pk">🗝 id_date PK</div>
+      <div>saison</div>
+      <div>mois</div>
+      <div>annee</div>
+    </div>
+  </div>
+
+  <!-- BOTTOM CENTER: Dim_Fournisseurs -->
+  <div class="table-box dim dim-bc" id="dim-bc">
+    <div class="table-header">Dim_Fournisseurs</div>
+    <div class="table-body">
+      <div class="pk">🗝 id_fournisseur PK</div>
+      <div>nom</div>
+      <div>type_engrais_fourni</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function getCenter(el) {
+  const wrapper = document.querySelector('.diagram-wrapper');
+  const wRect = wrapper.getBoundingClientRect();
+  const r = el.getBoundingClientRect();
+  return {
+    x: r.left - wRect.left + r.width / 2,
+    y: r.top - wRect.top + r.height / 2
+  };
+}
+
+function getEdgePoint(el, targetX, targetY) {
+  const wrapper = document.querySelector('.diagram-wrapper');
+  const wRect = wrapper.getBoundingClientRect();
+  const r = el.getBoundingClientRect();
+  const cx = r.left - wRect.left + r.width / 2;
+  const cy = r.top - wRect.top + r.height / 2;
+  const dx = targetX - cx;
+  const dy = targetY - cy;
+  const halfW = r.width / 2;
+  const halfH = r.height / 2;
+  const scaleX = Math.abs(dx) > 0 ? halfW / Math.abs(dx) : Infinity;
+  const scaleY = Math.abs(dy) > 0 ? halfH / Math.abs(dy) : Infinity;
+  const scale = Math.min(scaleX, scaleY);
+  return { x: cx + dx * scale, y: cy + dy * scale };
+}
+
+window.addEventListener('load', () => {
+  const svg = document.getElementById('svg-conn');
+  const fact = document.getElementById('fact');
+  const dims = ['dim-tl', 'dim-tr', 'dim-bl', 'dim-br', 'dim-bc'];
+
+  const factCenter = getCenter(fact);
+
+  dims.forEach(id => {
+    const dim = document.getElementById(id);
+    const dimCenter = getCenter(dim);
+
+    const fromFact = getEdgePoint(fact, dimCenter.x, dimCenter.y);
+    const toDim = getEdgePoint(dim, factCenter.x, factCenter.y);
+
+    // Draw line: from dim → to fact
+    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+    line.setAttribute('x1', toDim.x);
+    line.setAttribute('y1', toDim.y);
+    line.setAttribute('x2', fromFact.x);
+    line.setAttribute('y2', fromFact.y);
+    line.setAttribute('stroke', '#1a3a5c');
+    line.setAttribute('stroke-width', '2');
+    line.setAttribute('stroke-dasharray', '6,3');
+    svg.appendChild(line);
+
+    // Arrowhead at fact end
+    const angle = Math.atan2(fromFact.y - toDim.y, fromFact.x - toDim.x);
+    const aLen = 10, aWidth = 6;
+    const ax = fromFact.x - aLen * Math.cos(angle);
+    const ay = fromFact.y - aLen * Math.sin(angle);
+    const p1x = ax + aWidth * Math.sin(angle);
+    const p1y = ay - aWidth * Math.cos(angle);
+    const p2x = ax - aWidth * Math.sin(angle);
+    const p2y = ay + aWidth * Math.cos(angle);
+    const arrow = document.createElementNS('http://www.w3.org/2000/svg', 'polygon');
+    arrow.setAttribute('points', `${fromFact.x},${fromFact.y} ${p1x},${p1y} ${p2x},${p2y}`);
+    arrow.setAttribute('fill', '#1a3a5c');
+    svg.appendChild(arrow);
+  });
+});
+</script>
+</body>
+</html>
