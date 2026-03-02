@@ -63,7 +63,8 @@ with DAG(
     dag_id="senegal_export_pipeline",
     default_args=default_args,
     description="Pipeline ETL SenAgri : dbt seeds → staging → marts → Metabase",
-    schedule_interval="0 6 * * 1",   # Lundi 06:00 UTC
+    # schedule_interval="0 6 * * 1", # Lundi 06:00 UTC
+    schedule_interval="@hourly",  
     start_date=datetime(2024, 1, 1),
     catchup=False,
     tags=["senagri", "dbt", "dw", "agro"],
