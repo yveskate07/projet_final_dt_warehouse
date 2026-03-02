@@ -1,0 +1,129 @@
+version: 2
+
+# ─── STAGING ────────────────────────────────────────────────────────────────
+
+models:
+
+  - name: stg_campagnes
+    description: "Campagnes agricoles nettoyées (dédupliquées, dates normalisées, aberrants filtrés)"
+    columns:
+      - name: id_campagne
+        tests: [unique, not_null]
+      - name: id_parcelle
+        tests: [not_null]
+      - name: id_produit
+        tests: [not_null]
+      - name: tonnage_recolte
+        tests:
+          - not_null
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 500
+      - name: devise
+        tests:
+          - accepted_values:
+              values: ['USD', 'EUR', 'FCFA']
+
+  - name: stg_parcelles
+    description: "Parcelles agricoles nettoyées"
+    columns:
+      - name: id_parcelle
+        tests: [unique, not_null]
+      - name: zone
+        tests:
+          - accepted_values:
+              values: ['Casamance', 'Ziguinchor', 'Thiès', 'Fatick', 'Louga']
+
+  - name: stg_produits
+    description: "Catalogue des produits avec prix en FCFA"
+    columns:
+      - name: id_produit
+        tests: [unique, not_null]
+      - name: variete
+        tests:
+          - accepted_values:
+              values: ['Mangue Kent','Mangue Boucodiekhal','Anacarde W320','Anacarde W240','Arachide Shell']
+
+# ─── MARTS ──────────────────────────────────────────────────────────────────
+
+  - name: dim_parcelles
+    description: "Dimension Parcelles — schéma dwh"
+    columns:
+      - name: id_parcelle_sk
+        tests: [unique, not_null]
+      - name: id_parcelle
+        tests: [unique, not_null]
+
+  - name: dim_produits
+    description: "Dimension Produits — schéma dwh"
+    columns:
+      - name: id_produit_sk
+        tests: [unique, not_null]
+
+  - name: dim_meteo
+    description: "Dimension Météo — schéma dwh"
+    columns:
+      - name: id_meteo_sk
+        tests: [unique, not_null]
+
+  - name: dim_date
+    description: "Dimension Date — schéma dwh"
+    columns:
+      - name: id_date_sk
+        tests: [unique, not_null]
+      - name: saison
+        tests:
+          - accepted_values:
+              values: ['Hivernage', 'Saison Sèche']
+
+  - name: dim_fournisseurs
+    description: "Dimension Fournisseurs — schéma dwh"
+    columns:
+      - name: id_fournisseur_sk
+        tests: [unique, not_null]
+
+  - name: fait_campagne
+    description: "Table de faits centrale — campagnes agricoles SenAgri Export"
+    columns:
+      - name: id_campagne
+        tests: [unique, not_null]
+      - name: id_parcelle_sk
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_parcelles')
+              field: id_parcelle_sk
+      - name: id_produit_sk
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_produits')
+              field: id_produit_sk
+      - name: id_date_sk
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_date')
+              field: id_date_sk
+      - name: id_meteo_sk
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_meteo')
+              field: id_meteo_sk
+      - name: id_fournisseur_sk
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_fournisseurs')
+              field: id_fournisseur_sk
+      - name: taux_perte_pct
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 100
+      - name: rendement_ha
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 200

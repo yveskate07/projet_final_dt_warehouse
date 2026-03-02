@@ -1,0 +1,12 @@
+
+    
+    
+    truncate table "data_warehouse"."public_raw"."raw_parcelles";
+    -- dbt seed --
+    
+          insert into "data_warehouse"."public_raw"."raw_parcelles" (id_parcelle, surface_hectares, localisation, type_sol) values
+          (%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s)
+      
+
+;
+  

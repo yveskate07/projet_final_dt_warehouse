@@ -1,0 +1,13 @@
+senegal_export:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: postgres
+      host: postgres
+      user: etudiant
+      password: data_password
+      port: 5432
+      dbname: data_warehouse
+      schema: public
+      threads: 1

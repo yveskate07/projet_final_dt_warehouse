@@ -1,0 +1,12 @@
+
+    
+    
+    truncate table "data_warehouse"."public_raw"."raw_fournisseurs";
+    -- dbt seed --
+    
+          insert into "data_warehouse"."public_raw"."raw_fournisseurs" (id_fournisseur, nom_fournisseur, type_engrais_fourni) values
+          (%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s)
+      
+
+;
+  

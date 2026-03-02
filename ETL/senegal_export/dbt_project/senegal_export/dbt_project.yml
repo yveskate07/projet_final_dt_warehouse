@@ -1,0 +1,34 @@
+name: 'senegal_export'
+version: '1.0.0'
+config-version: 2
+
+profile: 'senegal_export'
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+test-paths: ["tests"]
+analysis-paths: ["analyses"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  senegal_export:
+    staging:
+      +schema: staging
+      +materialized: view
+    marts:
+      +schema: dwh
+      +materialized: table
+
+seeds:
+  senegal_export:
+    +schema: raw
+    +quote_columns: false
+
+vars:
+  usd_to_fcfa: 600
+  eur_to_fcfa: 655
