@@ -1,9 +1,7 @@
 
     
     
-    
-    create table "data_warehouse"."public_raw"."raw_parcelles" (id_parcelle integer,surface_hectares float8,localisation text,type_sol text)
-  ;
+    truncate table "data_warehouse"."public_raw"."raw_parcelles";
     -- dbt seed --
     
           insert into "data_warehouse"."public_raw"."raw_parcelles" (id_parcelle, surface_hectares, localisation, type_sol) values

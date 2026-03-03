@@ -1,9 +1,7 @@
 
     
     
-    
-    create table "data_warehouse"."public_raw"."raw_calendrier" (date_id integer,date_complete text)
-  ;
+    truncate table "data_warehouse"."public_raw"."raw_calendrier";
     -- dbt seed --
     
           insert into "data_warehouse"."public_raw"."raw_calendrier" (date_id, date_complete) values

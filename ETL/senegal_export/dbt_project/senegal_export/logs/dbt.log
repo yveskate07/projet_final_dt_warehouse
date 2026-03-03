@@ -4656,3 +4656,1851 @@ drop view if exists "data_warehouse"."public"."fct_campagne_performances__dbt_ba
 [0m23:05:35.801182 [debug] [MainThread]: Command `dbt run` succeeded at 23:05:35.800991 after 3.50 seconds
 [0m23:05:35.802649 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ba430344b80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ba42b62b400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7ba42b6308e0>]}
 [0m23:05:35.804468 [debug] [MainThread]: Flushing usage events
+[0m13:13:53.849378 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c5baf20cb50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c5bacf202e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c5bacf20280>]}
+
+
+============================== 13:13:53.863361 | 7e5dc182-6a3d-4eb4-bf09-f7a8579668a3 ==============================
+[0m13:13:53.863361 [info ] [MainThread]: Running with dbt=1.8.7
+[0m13:13:53.865743 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': '/opt/airflow/dbt_project/senegal_export/logs', 'version_check': 'True', 'profiles_dir': '.', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'static_parser': 'True', 'introspect': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt seed --profiles-dir .', 'send_anonymous_usage_stats': 'True'}
+[0m13:13:54.249058 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '7e5dc182-6a3d-4eb4-bf09-f7a8579668a3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c5bacebea40>]}
+[0m13:13:54.320670 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '7e5dc182-6a3d-4eb4-bf09-f7a8579668a3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c5bacf61d50>]}
+[0m13:13:54.323327 [info ] [MainThread]: Registered adapter: postgres=1.9.1
+[0m13:13:54.564417 [debug] [MainThread]: checksum: 4af21dafb485259c48497ac86b711ddb1982f3d0f1c0ca4e09356de488b753c0, vars: {}, profile: , target: , version: 1.8.7
+[0m13:13:58.390218 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m13:13:58.393318 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m13:13:58.410523 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.senegal_export.staging
+- models.senegal_export.marts
+[0m13:13:58.525483 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '7e5dc182-6a3d-4eb4-bf09-f7a8579668a3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c5bab04dea0>]}
+[0m13:13:58.860394 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '7e5dc182-6a3d-4eb4-bf09-f7a8579668a3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c5bab069e10>]}
+[0m13:13:58.863362 [info ] [MainThread]: Found 7 models, 6 seeds, 6 data tests, 544 macros
+[0m13:13:58.865706 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7e5dc182-6a3d-4eb4-bf09-f7a8579668a3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c5bab06a4d0>]}
+[0m13:13:58.871329 [info ] [MainThread]: 
+[0m13:13:58.873889 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m13:13:58.887379 [debug] [ThreadPool]: Acquiring new postgres connection 'list_data_warehouse'
+[0m13:13:58.970989 [debug] [ThreadPool]: Using postgres connection "list_data_warehouse"
+[0m13:13:58.972897 [debug] [ThreadPool]: On list_data_warehouse: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "connection_name": "list_data_warehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m13:13:58.974873 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:13:58.994143 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.019 seconds
+[0m13:13:58.997423 [debug] [ThreadPool]: On list_data_warehouse: Close
+[0m13:13:59.002366 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_data_warehouse, now list_data_warehouse_public_raw)
+[0m13:13:59.012475 [debug] [ThreadPool]: Using postgres connection "list_data_warehouse_public_raw"
+[0m13:13:59.014846 [debug] [ThreadPool]: On list_data_warehouse_public_raw: BEGIN
+[0m13:13:59.016980 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:13:59.030728 [debug] [ThreadPool]: SQL status: BEGIN in 0.014 seconds
+[0m13:13:59.033179 [debug] [ThreadPool]: Using postgres connection "list_data_warehouse_public_raw"
+[0m13:13:59.035301 [debug] [ThreadPool]: On list_data_warehouse_public_raw: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "connection_name": "list_data_warehouse_public_raw"} */
+select
+      'data_warehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_raw'
+    union all
+    select
+      'data_warehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_raw'
+    union all
+    select
+      'data_warehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_raw'
+  
+[0m13:13:59.051549 [debug] [ThreadPool]: SQL status: SELECT 6 in 0.014 seconds
+[0m13:13:59.054703 [debug] [ThreadPool]: On list_data_warehouse_public_raw: ROLLBACK
+[0m13:13:59.057093 [debug] [ThreadPool]: On list_data_warehouse_public_raw: Close
+[0m13:13:59.059562 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_data_warehouse_public_raw, now list_data_warehouse_public)
+[0m13:13:59.066819 [debug] [ThreadPool]: Using postgres connection "list_data_warehouse_public"
+[0m13:13:59.068734 [debug] [ThreadPool]: On list_data_warehouse_public: BEGIN
+[0m13:13:59.070660 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:13:59.084394 [debug] [ThreadPool]: SQL status: BEGIN in 0.014 seconds
+[0m13:13:59.086336 [debug] [ThreadPool]: Using postgres connection "list_data_warehouse_public"
+[0m13:13:59.088000 [debug] [ThreadPool]: On list_data_warehouse_public: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "connection_name": "list_data_warehouse_public"} */
+select
+      'data_warehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'data_warehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'data_warehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m13:13:59.099499 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.009 seconds
+[0m13:13:59.102912 [debug] [ThreadPool]: On list_data_warehouse_public: ROLLBACK
+[0m13:13:59.105089 [debug] [ThreadPool]: On list_data_warehouse_public: Close
+[0m13:13:59.116387 [debug] [MainThread]: Using postgres connection "master"
+[0m13:13:59.118586 [debug] [MainThread]: On master: BEGIN
+[0m13:13:59.120378 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:13:59.134480 [debug] [MainThread]: SQL status: BEGIN in 0.014 seconds
+[0m13:13:59.136397 [debug] [MainThread]: Using postgres connection "master"
+[0m13:13:59.138338 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m13:13:59.157049 [debug] [MainThread]: SQL status: SELECT 10 in 0.016 seconds
+[0m13:13:59.163724 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '7e5dc182-6a3d-4eb4-bf09-f7a8579668a3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c5bab167d30>]}
+[0m13:13:59.165938 [debug] [MainThread]: On master: ROLLBACK
+[0m13:13:59.168387 [debug] [MainThread]: Using postgres connection "master"
+[0m13:13:59.170664 [debug] [MainThread]: On master: BEGIN
+[0m13:13:59.173425 [debug] [MainThread]: SQL status: BEGIN in 0.001 seconds
+[0m13:13:59.175636 [debug] [MainThread]: On master: COMMIT
+[0m13:13:59.177770 [debug] [MainThread]: Using postgres connection "master"
+[0m13:13:59.179940 [debug] [MainThread]: On master: COMMIT
+[0m13:13:59.182669 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m13:13:59.185382 [debug] [MainThread]: On master: Close
+[0m13:13:59.187895 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m13:13:59.192419 [info ] [MainThread]: 
+[0m13:13:59.205879 [debug] [Thread-1 (]: Began running node seed.senegal_export.raw_calendrier
+[0m13:13:59.208628 [info ] [Thread-1 (]: 1 of 6 START seed file public_raw.raw_calendrier ............................... [RUN]
+[0m13:13:59.211365 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_data_warehouse_public, now seed.senegal_export.raw_calendrier)
+[0m13:13:59.213422 [debug] [Thread-1 (]: Began compiling node seed.senegal_export.raw_calendrier
+[0m13:13:59.215534 [debug] [Thread-1 (]: Began executing node seed.senegal_export.raw_calendrier
+[0m13:13:59.280069 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_calendrier"
+[0m13:13:59.282400 [debug] [Thread-1 (]: On seed.senegal_export.raw_calendrier: BEGIN
+[0m13:13:59.284745 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:13:59.299290 [debug] [Thread-1 (]: SQL status: BEGIN in 0.014 seconds
+[0m13:13:59.301334 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_calendrier"
+[0m13:13:59.303263 [debug] [Thread-1 (]: On seed.senegal_export.raw_calendrier: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "seed.senegal_export.raw_calendrier"} */
+truncate table "data_warehouse"."public_raw"."raw_calendrier"
+[0m13:13:59.313346 [debug] [Thread-1 (]: SQL status: TRUNCATE TABLE in 0.008 seconds
+[0m13:13:59.411221 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_calendrier"
+[0m13:13:59.413753 [debug] [Thread-1 (]: On seed.senegal_export.raw_calendrier: 
+          insert into "data_warehouse"."public_raw"."raw_calendrier" (date_id, date_complete) values
+          (%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),...
+[0m13:13:59.418463 [debug] [Thread-1 (]: SQL status: INSERT 0 365 in 0.003 seconds
+[0m13:13:59.425705 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.senegal_export.raw_calendrier"
+[0m13:13:59.481442 [debug] [Thread-1 (]: On seed.senegal_export.raw_calendrier: COMMIT
+[0m13:13:59.484649 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_calendrier"
+[0m13:13:59.487236 [debug] [Thread-1 (]: On seed.senegal_export.raw_calendrier: COMMIT
+[0m13:13:59.493286 [debug] [Thread-1 (]: SQL status: COMMIT in 0.004 seconds
+[0m13:13:59.498012 [debug] [Thread-1 (]: On seed.senegal_export.raw_calendrier: Close
+[0m13:13:59.502144 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7e5dc182-6a3d-4eb4-bf09-f7a8579668a3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c5baa496cb0>]}
+[0m13:13:59.506279 [info ] [Thread-1 (]: 1 of 6 OK loaded seed file public_raw.raw_calendrier ........................... [[32mINSERT 365[0m in 0.29s]
+[0m13:13:59.508769 [debug] [Thread-1 (]: Finished running node seed.senegal_export.raw_calendrier
+[0m13:13:59.511097 [debug] [Thread-1 (]: Began running node seed.senegal_export.raw_campagne
+[0m13:13:59.513342 [info ] [Thread-1 (]: 2 of 6 START seed file public_raw.raw_campagne ................................. [RUN]
+[0m13:13:59.516026 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly seed.senegal_export.raw_calendrier, now seed.senegal_export.raw_campagne)
+[0m13:13:59.519437 [debug] [Thread-1 (]: Began compiling node seed.senegal_export.raw_campagne
+[0m13:13:59.522905 [debug] [Thread-1 (]: Began executing node seed.senegal_export.raw_campagne
+[0m13:13:59.589831 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_campagne"
+[0m13:13:59.592346 [debug] [Thread-1 (]: On seed.senegal_export.raw_campagne: BEGIN
+[0m13:13:59.594454 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:13:59.613715 [debug] [Thread-1 (]: SQL status: BEGIN in 0.019 seconds
+[0m13:13:59.616150 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_campagne"
+[0m13:13:59.618360 [debug] [Thread-1 (]: On seed.senegal_export.raw_campagne: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "seed.senegal_export.raw_campagne"} */
+truncate table "data_warehouse"."public_raw"."raw_campagne"
+[0m13:13:59.627269 [debug] [Thread-1 (]: SQL status: TRUNCATE TABLE in 0.007 seconds
+[0m13:14:00.310919 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_campagne"
+[0m13:14:00.313295 [debug] [Thread-1 (]: On seed.senegal_export.raw_campagne: 
+          insert into "data_warehouse"."public_raw"."raw_campagne" (id_campagne, id_parcelle, id_produit, id_meteo, id_fournisseur, date_id, tonnage_recolte, tonnage_exporte, cout_intrants_devise, devise_origine) values
+          (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s,...
+[0m13:14:00.327806 [debug] [Thread-1 (]: SQL status: INSERT 0 500 in 0.012 seconds
+[0m13:14:00.330635 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.senegal_export.raw_campagne"
+[0m13:14:00.348242 [debug] [Thread-1 (]: On seed.senegal_export.raw_campagne: COMMIT
+[0m13:14:00.360591 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_campagne"
+[0m13:14:00.365806 [debug] [Thread-1 (]: On seed.senegal_export.raw_campagne: COMMIT
+[0m13:14:00.376110 [debug] [Thread-1 (]: SQL status: COMMIT in 0.006 seconds
+[0m13:14:00.381394 [debug] [Thread-1 (]: On seed.senegal_export.raw_campagne: Close
+[0m13:14:00.386127 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7e5dc182-6a3d-4eb4-bf09-f7a8579668a3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c5baa584f70>]}
+[0m13:14:00.390772 [info ] [Thread-1 (]: 2 of 6 OK loaded seed file public_raw.raw_campagne ............................. [[32mINSERT 500[0m in 0.87s]
+[0m13:14:00.395739 [debug] [Thread-1 (]: Finished running node seed.senegal_export.raw_campagne
+[0m13:14:00.399322 [debug] [Thread-1 (]: Began running node seed.senegal_export.raw_fournisseurs
+[0m13:14:00.402758 [info ] [Thread-1 (]: 3 of 6 START seed file public_raw.raw_fournisseurs ............................. [RUN]
+[0m13:14:00.406242 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly seed.senegal_export.raw_campagne, now seed.senegal_export.raw_fournisseurs)
+[0m13:14:00.409442 [debug] [Thread-1 (]: Began compiling node seed.senegal_export.raw_fournisseurs
+[0m13:14:00.413031 [debug] [Thread-1 (]: Began executing node seed.senegal_export.raw_fournisseurs
+[0m13:14:00.448140 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_fournisseurs"
+[0m13:14:00.452275 [debug] [Thread-1 (]: On seed.senegal_export.raw_fournisseurs: BEGIN
+[0m13:14:00.456206 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:14:00.484407 [debug] [Thread-1 (]: SQL status: BEGIN in 0.028 seconds
+[0m13:14:00.491514 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_fournisseurs"
+[0m13:14:00.494256 [debug] [Thread-1 (]: On seed.senegal_export.raw_fournisseurs: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "seed.senegal_export.raw_fournisseurs"} */
+truncate table "data_warehouse"."public_raw"."raw_fournisseurs"
+[0m13:14:00.504705 [debug] [Thread-1 (]: SQL status: TRUNCATE TABLE in 0.008 seconds
+[0m13:14:00.511898 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_fournisseurs"
+[0m13:14:00.514036 [debug] [Thread-1 (]: On seed.senegal_export.raw_fournisseurs: 
+          insert into "data_warehouse"."public_raw"."raw_fournisseurs" (id_fournisseur, nom_fournisseur, type_engrais_fourni) values
+          (%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s)
+      ...
+[0m13:14:00.516943 [debug] [Thread-1 (]: SQL status: INSERT 0 8 in 0.001 seconds
+[0m13:14:00.519605 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.senegal_export.raw_fournisseurs"
+[0m13:14:00.542364 [debug] [Thread-1 (]: On seed.senegal_export.raw_fournisseurs: COMMIT
+[0m13:14:00.545485 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_fournisseurs"
+[0m13:14:00.548721 [debug] [Thread-1 (]: On seed.senegal_export.raw_fournisseurs: COMMIT
+[0m13:14:00.554971 [debug] [Thread-1 (]: SQL status: COMMIT in 0.003 seconds
+[0m13:14:00.559357 [debug] [Thread-1 (]: On seed.senegal_export.raw_fournisseurs: Close
+[0m13:14:00.563077 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7e5dc182-6a3d-4eb4-bf09-f7a8579668a3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c5baa584f70>]}
+[0m13:14:00.565537 [info ] [Thread-1 (]: 3 of 6 OK loaded seed file public_raw.raw_fournisseurs ......................... [[32mINSERT 8[0m in 0.16s]
+[0m13:14:00.568602 [debug] [Thread-1 (]: Finished running node seed.senegal_export.raw_fournisseurs
+[0m13:14:00.571555 [debug] [Thread-1 (]: Began running node seed.senegal_export.raw_meteo
+[0m13:14:00.574516 [info ] [Thread-1 (]: 4 of 6 START seed file public_raw.raw_meteo .................................... [RUN]
+[0m13:14:00.577462 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly seed.senegal_export.raw_fournisseurs, now seed.senegal_export.raw_meteo)
+[0m13:14:00.580079 [debug] [Thread-1 (]: Began compiling node seed.senegal_export.raw_meteo
+[0m13:14:00.582590 [debug] [Thread-1 (]: Began executing node seed.senegal_export.raw_meteo
+[0m13:14:00.617142 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_meteo"
+[0m13:14:00.619960 [debug] [Thread-1 (]: On seed.senegal_export.raw_meteo: BEGIN
+[0m13:14:00.622387 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:14:00.639916 [debug] [Thread-1 (]: SQL status: BEGIN in 0.017 seconds
+[0m13:14:00.642724 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_meteo"
+[0m13:14:00.645166 [debug] [Thread-1 (]: On seed.senegal_export.raw_meteo: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "seed.senegal_export.raw_meteo"} */
+truncate table "data_warehouse"."public_raw"."raw_meteo"
+[0m13:14:00.648933 [debug] [Thread-1 (]: SQL status: TRUNCATE TABLE in 0.001 seconds
+[0m13:14:00.765787 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_meteo"
+[0m13:14:00.767864 [debug] [Thread-1 (]: On seed.senegal_export.raw_meteo: 
+          insert into "data_warehouse"."public_raw"."raw_meteo" (id_meteo, pluviometrie_mm, temperature_moyenne_celsius) values
+          (%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s)...
+[0m13:14:00.776310 [debug] [Thread-1 (]: SQL status: INSERT 0 365 in 0.006 seconds
+[0m13:14:00.778763 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.senegal_export.raw_meteo"
+[0m13:14:00.795259 [debug] [Thread-1 (]: On seed.senegal_export.raw_meteo: COMMIT
+[0m13:14:00.797528 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_meteo"
+[0m13:14:00.799385 [debug] [Thread-1 (]: On seed.senegal_export.raw_meteo: COMMIT
+[0m13:14:00.804254 [debug] [Thread-1 (]: SQL status: COMMIT in 0.003 seconds
+[0m13:14:00.807534 [debug] [Thread-1 (]: On seed.senegal_export.raw_meteo: Close
+[0m13:14:00.809866 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7e5dc182-6a3d-4eb4-bf09-f7a8579668a3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c5baa4963b0>]}
+[0m13:14:00.812140 [info ] [Thread-1 (]: 4 of 6 OK loaded seed file public_raw.raw_meteo ................................ [[32mINSERT 365[0m in 0.23s]
+[0m13:14:00.814377 [debug] [Thread-1 (]: Finished running node seed.senegal_export.raw_meteo
+[0m13:14:00.816491 [debug] [Thread-1 (]: Began running node seed.senegal_export.raw_parcelles
+[0m13:14:00.818606 [info ] [Thread-1 (]: 5 of 6 START seed file public_raw.raw_parcelles ................................ [RUN]
+[0m13:14:00.820765 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly seed.senegal_export.raw_meteo, now seed.senegal_export.raw_parcelles)
+[0m13:14:00.822638 [debug] [Thread-1 (]: Began compiling node seed.senegal_export.raw_parcelles
+[0m13:14:00.824502 [debug] [Thread-1 (]: Began executing node seed.senegal_export.raw_parcelles
+[0m13:14:00.842505 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_parcelles"
+[0m13:14:00.844628 [debug] [Thread-1 (]: On seed.senegal_export.raw_parcelles: BEGIN
+[0m13:14:00.846627 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:14:00.860596 [debug] [Thread-1 (]: SQL status: BEGIN in 0.014 seconds
+[0m13:14:00.862575 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_parcelles"
+[0m13:14:00.864375 [debug] [Thread-1 (]: On seed.senegal_export.raw_parcelles: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "seed.senegal_export.raw_parcelles"} */
+truncate table "data_warehouse"."public_raw"."raw_parcelles"
+[0m13:14:00.873835 [debug] [Thread-1 (]: SQL status: TRUNCATE TABLE in 0.007 seconds
+[0m13:14:00.885797 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_parcelles"
+[0m13:14:00.888048 [debug] [Thread-1 (]: On seed.senegal_export.raw_parcelles: 
+          insert into "data_warehouse"."public_raw"."raw_parcelles" (id_parcelle, surface_hectares, localisation, type_sol) values
+          (%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s)
+      ...
+[0m13:14:00.891728 [debug] [Thread-1 (]: SQL status: INSERT 0 20 in 0.001 seconds
+[0m13:14:00.894228 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.senegal_export.raw_parcelles"
+[0m13:14:00.909774 [debug] [Thread-1 (]: On seed.senegal_export.raw_parcelles: COMMIT
+[0m13:14:00.912063 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_parcelles"
+[0m13:14:00.914488 [debug] [Thread-1 (]: On seed.senegal_export.raw_parcelles: COMMIT
+[0m13:14:00.919332 [debug] [Thread-1 (]: SQL status: COMMIT in 0.003 seconds
+[0m13:14:00.922496 [debug] [Thread-1 (]: On seed.senegal_export.raw_parcelles: Close
+[0m13:14:00.925612 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7e5dc182-6a3d-4eb4-bf09-f7a8579668a3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c5baa496500>]}
+[0m13:14:00.928332 [info ] [Thread-1 (]: 5 of 6 OK loaded seed file public_raw.raw_parcelles ............................ [[32mINSERT 20[0m in 0.10s]
+[0m13:14:00.931075 [debug] [Thread-1 (]: Finished running node seed.senegal_export.raw_parcelles
+[0m13:14:00.933262 [debug] [Thread-1 (]: Began running node seed.senegal_export.raw_produits
+[0m13:14:00.935505 [info ] [Thread-1 (]: 6 of 6 START seed file public_raw.raw_produits ................................. [RUN]
+[0m13:14:00.937852 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly seed.senegal_export.raw_parcelles, now seed.senegal_export.raw_produits)
+[0m13:14:00.940019 [debug] [Thread-1 (]: Began compiling node seed.senegal_export.raw_produits
+[0m13:14:00.942313 [debug] [Thread-1 (]: Began executing node seed.senegal_export.raw_produits
+[0m13:14:00.963938 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_produits"
+[0m13:14:00.966275 [debug] [Thread-1 (]: On seed.senegal_export.raw_produits: BEGIN
+[0m13:14:00.968303 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:14:00.983746 [debug] [Thread-1 (]: SQL status: BEGIN in 0.015 seconds
+[0m13:14:00.986311 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_produits"
+[0m13:14:00.988635 [debug] [Thread-1 (]: On seed.senegal_export.raw_produits: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "seed.senegal_export.raw_produits"} */
+truncate table "data_warehouse"."public_raw"."raw_produits"
+[0m13:14:00.997858 [debug] [Thread-1 (]: SQL status: TRUNCATE TABLE in 0.007 seconds
+[0m13:14:01.005022 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_produits"
+[0m13:14:01.007450 [debug] [Thread-1 (]: On seed.senegal_export.raw_produits: 
+          insert into "data_warehouse"."public_raw"."raw_produits" (id_produit, nom_produit, variete) values
+          (%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s)
+      ...
+[0m13:14:01.010841 [debug] [Thread-1 (]: SQL status: INSERT 0 9 in 0.001 seconds
+[0m13:14:01.013419 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.senegal_export.raw_produits"
+[0m13:14:01.031146 [debug] [Thread-1 (]: On seed.senegal_export.raw_produits: COMMIT
+[0m13:14:01.033661 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_produits"
+[0m13:14:01.035885 [debug] [Thread-1 (]: On seed.senegal_export.raw_produits: COMMIT
+[0m13:14:01.041059 [debug] [Thread-1 (]: SQL status: COMMIT in 0.002 seconds
+[0m13:14:01.044115 [debug] [Thread-1 (]: On seed.senegal_export.raw_produits: Close
+[0m13:14:01.046651 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '7e5dc182-6a3d-4eb4-bf09-f7a8579668a3', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c5baa496650>]}
+[0m13:14:01.048873 [info ] [Thread-1 (]: 6 of 6 OK loaded seed file public_raw.raw_produits ............................. [[32mINSERT 9[0m in 0.11s]
+[0m13:14:01.051689 [debug] [Thread-1 (]: Finished running node seed.senegal_export.raw_produits
+[0m13:14:01.055764 [debug] [MainThread]: Using postgres connection "master"
+[0m13:14:01.057590 [debug] [MainThread]: On master: BEGIN
+[0m13:14:01.060063 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m13:14:01.074247 [debug] [MainThread]: SQL status: BEGIN in 0.014 seconds
+[0m13:14:01.076716 [debug] [MainThread]: On master: COMMIT
+[0m13:14:01.078826 [debug] [MainThread]: Using postgres connection "master"
+[0m13:14:01.081031 [debug] [MainThread]: On master: COMMIT
+[0m13:14:01.083739 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m13:14:01.086246 [debug] [MainThread]: On master: Close
+[0m13:14:01.088608 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:14:01.093130 [debug] [MainThread]: Connection 'seed.senegal_export.raw_produits' was properly closed.
+[0m13:14:01.095215 [info ] [MainThread]: 
+[0m13:14:01.097439 [info ] [MainThread]: Finished running 6 seeds in 0 hours 0 minutes and 2.22 seconds (2.22s).
+[0m13:14:01.101010 [debug] [MainThread]: Command end result
+[0m13:14:01.254594 [info ] [MainThread]: 
+[0m13:14:01.258665 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m13:14:01.262533 [info ] [MainThread]: 
+[0m13:14:01.266906 [info ] [MainThread]: Done. PASS=6 WARN=0 ERROR=0 SKIP=0 TOTAL=6
+[0m13:14:01.274999 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_success": true, "command_wall_clock_time": 7.5383005, "process_user_time": 5.161369, "process_kernel_time": 1.045187, "process_mem_max_rss": "151996", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m13:14:01.279680 [debug] [MainThread]: Command `dbt seed` succeeded at 13:14:01.279323 after 7.54 seconds
+[0m13:14:01.283423 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c5baf20cb50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c5bad32fc70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c5ba8baf910>]}
+[0m13:14:01.287093 [debug] [MainThread]: Flushing usage events
+[0m13:14:07.548097 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75a919a50b80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75a9177642e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75a917764280>]}
+
+
+============================== 13:14:07.565981 | 63eb8d47-0d2a-46ee-96de-a736e2d84f3f ==============================
+[0m13:14:07.565981 [info ] [MainThread]: Running with dbt=1.8.7
+[0m13:14:07.570056 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '.', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': '/opt/airflow/dbt_project/senegal_export/logs', 'version_check': 'True', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'False', 'log_format': 'default', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'target_path': 'None', 'invocation_command': 'dbt run --profiles-dir .', 'send_anonymous_usage_stats': 'True'}
+[0m13:14:07.974361 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '63eb8d47-0d2a-46ee-96de-a736e2d84f3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75a91998fa00>]}
+[0m13:14:08.060371 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '63eb8d47-0d2a-46ee-96de-a736e2d84f3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75a9177a5db0>]}
+[0m13:14:08.063187 [info ] [MainThread]: Registered adapter: postgres=1.9.1
+[0m13:14:08.413900 [debug] [MainThread]: checksum: 4af21dafb485259c48497ac86b711ddb1982f3d0f1c0ca4e09356de488b753c0, vars: {}, profile: , target: , version: 1.8.7
+[0m13:14:11.934239 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m13:14:11.937929 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m13:14:11.956659 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.senegal_export.marts
+- models.senegal_export.staging
+[0m13:14:12.062944 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '63eb8d47-0d2a-46ee-96de-a736e2d84f3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75a915891ed0>]}
+[0m13:14:12.448719 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '63eb8d47-0d2a-46ee-96de-a736e2d84f3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75a915a36110>]}
+[0m13:14:12.450916 [info ] [MainThread]: Found 7 models, 6 seeds, 6 data tests, 544 macros
+[0m13:14:12.453452 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '63eb8d47-0d2a-46ee-96de-a736e2d84f3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75a915a35cf0>]}
+[0m13:14:12.457898 [info ] [MainThread]: 
+[0m13:14:12.460125 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m13:14:12.468616 [debug] [ThreadPool]: Acquiring new postgres connection 'list_data_warehouse'
+[0m13:14:12.536971 [debug] [ThreadPool]: Using postgres connection "list_data_warehouse"
+[0m13:14:12.539913 [debug] [ThreadPool]: On list_data_warehouse: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "connection_name": "list_data_warehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m13:14:12.597080 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m13:14:12.709767 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.113 seconds
+[0m13:14:12.741139 [debug] [ThreadPool]: On list_data_warehouse: Close
+[0m13:14:12.756083 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_data_warehouse, now list_data_warehouse_public_raw)
+[0m13:14:12.793187 [debug] [ThreadPool]: Using postgres connection "list_data_warehouse_public_raw"
+[0m13:14:12.796665 [debug] [ThreadPool]: On list_data_warehouse_public_raw: BEGIN
+[0m13:14:12.812720 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:14:12.841168 [debug] [ThreadPool]: SQL status: BEGIN in 0.029 seconds
+[0m13:14:12.843498 [debug] [ThreadPool]: Using postgres connection "list_data_warehouse_public_raw"
+[0m13:14:12.845742 [debug] [ThreadPool]: On list_data_warehouse_public_raw: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "connection_name": "list_data_warehouse_public_raw"} */
+select
+      'data_warehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_raw'
+    union all
+    select
+      'data_warehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_raw'
+    union all
+    select
+      'data_warehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_raw'
+  
+[0m13:14:12.858039 [debug] [ThreadPool]: SQL status: SELECT 6 in 0.010 seconds
+[0m13:14:12.860943 [debug] [ThreadPool]: On list_data_warehouse_public_raw: ROLLBACK
+[0m13:14:12.862753 [debug] [ThreadPool]: On list_data_warehouse_public_raw: Close
+[0m13:14:12.864838 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_data_warehouse_public_raw, now list_data_warehouse_public)
+[0m13:14:12.871044 [debug] [ThreadPool]: Using postgres connection "list_data_warehouse_public"
+[0m13:14:12.873067 [debug] [ThreadPool]: On list_data_warehouse_public: BEGIN
+[0m13:14:12.874862 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m13:14:12.887662 [debug] [ThreadPool]: SQL status: BEGIN in 0.013 seconds
+[0m13:14:12.889787 [debug] [ThreadPool]: Using postgres connection "list_data_warehouse_public"
+[0m13:14:12.891525 [debug] [ThreadPool]: On list_data_warehouse_public: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "connection_name": "list_data_warehouse_public"} */
+select
+      'data_warehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'data_warehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'data_warehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m13:14:12.901241 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.008 seconds
+[0m13:14:12.904342 [debug] [ThreadPool]: On list_data_warehouse_public: ROLLBACK
+[0m13:14:12.906237 [debug] [ThreadPool]: On list_data_warehouse_public: Close
+[0m13:14:12.916660 [debug] [MainThread]: Using postgres connection "master"
+[0m13:14:12.918609 [debug] [MainThread]: On master: BEGIN
+[0m13:14:12.920418 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m13:14:12.934220 [debug] [MainThread]: SQL status: BEGIN in 0.014 seconds
+[0m13:14:12.936635 [debug] [MainThread]: Using postgres connection "master"
+[0m13:14:12.938574 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m13:14:12.950365 [debug] [MainThread]: SQL status: SELECT 10 in 0.010 seconds
+[0m13:14:12.955992 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '63eb8d47-0d2a-46ee-96de-a736e2d84f3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75a915a7bdf0>]}
+[0m13:14:12.958226 [debug] [MainThread]: On master: ROLLBACK
+[0m13:14:12.960286 [debug] [MainThread]: Using postgres connection "master"
+[0m13:14:12.962099 [debug] [MainThread]: On master: BEGIN
+[0m13:14:12.969224 [debug] [MainThread]: SQL status: BEGIN in 0.001 seconds
+[0m13:14:12.973791 [debug] [MainThread]: On master: COMMIT
+[0m13:14:12.977467 [debug] [MainThread]: Using postgres connection "master"
+[0m13:14:12.980704 [debug] [MainThread]: On master: COMMIT
+[0m13:14:12.984459 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m13:14:12.987293 [debug] [MainThread]: On master: Close
+[0m13:14:12.994002 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m13:14:12.998218 [info ] [MainThread]: 
+[0m13:14:13.012424 [debug] [Thread-1 (]: Began running node model.senegal_export.stg_campagne
+[0m13:14:13.014729 [info ] [Thread-1 (]: 1 of 7 START sql view model public.stg_campagne ................................ [RUN]
+[0m13:14:13.016649 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_data_warehouse_public, now model.senegal_export.stg_campagne)
+[0m13:14:13.018556 [debug] [Thread-1 (]: Began compiling node model.senegal_export.stg_campagne
+[0m13:14:13.034451 [debug] [Thread-1 (]: Writing injected SQL for node "model.senegal_export.stg_campagne"
+[0m13:14:13.054419 [debug] [Thread-1 (]: Began executing node model.senegal_export.stg_campagne
+[0m13:14:13.112944 [debug] [Thread-1 (]: Writing runtime sql for node "model.senegal_export.stg_campagne"
+[0m13:14:13.138422 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_campagne"
+[0m13:14:13.141212 [debug] [Thread-1 (]: On model.senegal_export.stg_campagne: BEGIN
+[0m13:14:13.143704 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:14:13.160375 [debug] [Thread-1 (]: SQL status: BEGIN in 0.017 seconds
+[0m13:14:13.163193 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_campagne"
+[0m13:14:13.165733 [debug] [Thread-1 (]: On model.senegal_export.stg_campagne: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_campagne"} */
+
+  create view "data_warehouse"."public"."stg_campagne__dbt_tmp"
+    
+    
+  as (
+    -- models/staging/stg_campagne.sql
+WITH source AS (
+    SELECT * FROM "data_warehouse"."public_raw"."raw_campagne"
+)
+SELECT
+    id_campagne, -- Vérifie bien l'orthographe ici (minuscule/majuscule)
+    id_parcelle,
+    id_produit,
+    id_meteo,
+    date_id,
+    CAST(NULLIF(tonnage_recolte, 'NA') AS FLOAT) AS tonnage_recolte,
+    CAST(NULLIF(tonnage_exporte, 'NA') AS FLOAT) AS tonnage_exporte,
+    -- Conversion EUR/USD -> FCFA
+    CASE 
+        WHEN devise_origine = 'EUR' THEN CAST(NULLIF(cout_intrants_devise, 'NA') AS FLOAT) * 655.95
+        WHEN devise_origine = 'USD' THEN CAST(NULLIF(cout_intrants_devise, 'NA') AS FLOAT) * 600
+        ELSE CAST(NULLIF(cout_intrants_devise, 'NA') AS FLOAT)
+    END AS cout_intrants_fcfa
+FROM source
+  );
+[0m13:14:13.181950 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.014 seconds
+[0m13:14:13.195701 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_campagne"
+[0m13:14:13.198887 [debug] [Thread-1 (]: On model.senegal_export.stg_campagne: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_campagne"} */
+alter table "data_warehouse"."public"."stg_campagne" rename to "stg_campagne__dbt_backup"
+[0m13:14:13.203676 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.002 seconds
+[0m13:14:13.211547 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_campagne"
+[0m13:14:13.214132 [debug] [Thread-1 (]: On model.senegal_export.stg_campagne: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_campagne"} */
+alter table "data_warehouse"."public"."stg_campagne__dbt_tmp" rename to "stg_campagne"
+[0m13:14:13.218480 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.002 seconds
+[0m13:14:13.256547 [debug] [Thread-1 (]: On model.senegal_export.stg_campagne: COMMIT
+[0m13:14:13.259513 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_campagne"
+[0m13:14:13.262305 [debug] [Thread-1 (]: On model.senegal_export.stg_campagne: COMMIT
+[0m13:14:13.268288 [debug] [Thread-1 (]: SQL status: COMMIT in 0.003 seconds
+[0m13:14:13.285405 [debug] [Thread-1 (]: Applying DROP to: "data_warehouse"."public"."stg_campagne__dbt_backup"
+[0m13:14:13.297094 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_campagne"
+[0m13:14:13.300782 [debug] [Thread-1 (]: On model.senegal_export.stg_campagne: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_campagne"} */
+drop view if exists "data_warehouse"."public"."stg_campagne__dbt_backup" cascade
+[0m13:14:13.317445 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.013 seconds
+[0m13:14:13.330418 [debug] [Thread-1 (]: On model.senegal_export.stg_campagne: Close
+[0m13:14:13.338772 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '63eb8d47-0d2a-46ee-96de-a736e2d84f3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75a914cc67a0>]}
+[0m13:14:13.342846 [info ] [Thread-1 (]: 1 of 7 OK created sql view model public.stg_campagne ........................... [[32mCREATE VIEW[0m in 0.32s]
+[0m13:14:13.346619 [debug] [Thread-1 (]: Finished running node model.senegal_export.stg_campagne
+[0m13:14:13.349629 [debug] [Thread-1 (]: Began running node model.senegal_export.stg_dates
+[0m13:14:13.352446 [info ] [Thread-1 (]: 2 of 7 START sql view model public.stg_dates ................................... [RUN]
+[0m13:14:13.355326 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.senegal_export.stg_campagne, now model.senegal_export.stg_dates)
+[0m13:14:13.358616 [debug] [Thread-1 (]: Began compiling node model.senegal_export.stg_dates
+[0m13:14:13.366751 [debug] [Thread-1 (]: Writing injected SQL for node "model.senegal_export.stg_dates"
+[0m13:14:13.390397 [debug] [Thread-1 (]: Began executing node model.senegal_export.stg_dates
+[0m13:14:13.398603 [debug] [Thread-1 (]: Writing runtime sql for node "model.senegal_export.stg_dates"
+[0m13:14:13.421698 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_dates"
+[0m13:14:13.424127 [debug] [Thread-1 (]: On model.senegal_export.stg_dates: BEGIN
+[0m13:14:13.426505 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:14:13.441632 [debug] [Thread-1 (]: SQL status: BEGIN in 0.015 seconds
+[0m13:14:13.443943 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_dates"
+[0m13:14:13.446421 [debug] [Thread-1 (]: On model.senegal_export.stg_dates: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_dates"} */
+
+  create view "data_warehouse"."public"."stg_dates__dbt_tmp"
+    
+    
+  as (
+    WITH source AS (
+    SELECT * FROM "data_warehouse"."public_raw"."raw_calendrier"
+    WHERE date_id IS NOT NULL
+),
+
+base_dates AS (
+    -- On crée la vraie date une seule fois pour s'en servir ensuite
+    SELECT 
+        date_id,
+        TO_DATE(CAST(date_id AS TEXT), 'YYYYMMDD') AS date_standard_date
+    FROM source
+)
+
+SELECT 
+    date_id,
+    
+    -- La date au format texte 'DD-MM-AAAA' comme tu l'as demandé
+    TO_CHAR(date_standard_date, 'DD-MM-YYYY') AS date_standard_str,
+    
+    -- La date au format natif (utile pour les jointures)
+    date_standard_date,
+    
+    -- ===== MOIS =====
+    EXTRACT(MONTH FROM date_standard_date)::INTEGER AS mois_id,
+    TO_CHAR(date_standard_date, 'MM') AS mois_format_str,       -- ex: '07', '08'
+    TO_CHAR(date_standard_date, 'Month') AS mois_nom,           -- ex: 'July     ', 'August   '
+    
+    -- ===== TRIMESTRE =====
+    EXTRACT(QUARTER FROM date_standard_date)::INTEGER AS trimestre_id,
+    'T' || EXTRACT(QUARTER FROM date_standard_date) AS trimestre_nom, -- ex: 'T3', 'T4'
+    
+    -- ===== SEMESTRE =====
+    CASE 
+        WHEN EXTRACT(MONTH FROM date_standard_date) <= 6 THEN 1 
+        ELSE 2 
+    END AS semestre_id,
+    CASE 
+        WHEN EXTRACT(MONTH FROM date_standard_date) <= 6 THEN 'S1' 
+        ELSE 'S2' 
+    END AS semestre_nom
+
+FROM base_dates
+  );
+[0m13:14:13.459799 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.011 seconds
+[0m13:14:13.467355 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_dates"
+[0m13:14:13.469855 [debug] [Thread-1 (]: On model.senegal_export.stg_dates: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_dates"} */
+alter table "data_warehouse"."public"."stg_dates" rename to "stg_dates__dbt_backup"
+[0m13:14:13.473813 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m13:14:13.481232 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_dates"
+[0m13:14:13.483860 [debug] [Thread-1 (]: On model.senegal_export.stg_dates: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_dates"} */
+alter table "data_warehouse"."public"."stg_dates__dbt_tmp" rename to "stg_dates"
+[0m13:14:13.487351 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m13:14:13.491280 [debug] [Thread-1 (]: On model.senegal_export.stg_dates: COMMIT
+[0m13:14:13.493554 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_dates"
+[0m13:14:13.495940 [debug] [Thread-1 (]: On model.senegal_export.stg_dates: COMMIT
+[0m13:14:13.501505 [debug] [Thread-1 (]: SQL status: COMMIT in 0.003 seconds
+[0m13:14:13.508909 [debug] [Thread-1 (]: Applying DROP to: "data_warehouse"."public"."stg_dates__dbt_backup"
+[0m13:14:13.511966 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_dates"
+[0m13:14:13.514416 [debug] [Thread-1 (]: On model.senegal_export.stg_dates: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_dates"} */
+drop view if exists "data_warehouse"."public"."stg_dates__dbt_backup" cascade
+[0m13:14:13.522309 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.006 seconds
+[0m13:14:13.526823 [debug] [Thread-1 (]: On model.senegal_export.stg_dates: Close
+[0m13:14:13.529571 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '63eb8d47-0d2a-46ee-96de-a736e2d84f3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75a915895e40>]}
+[0m13:14:13.532169 [info ] [Thread-1 (]: 2 of 7 OK created sql view model public.stg_dates .............................. [[32mCREATE VIEW[0m in 0.17s]
+[0m13:14:13.535006 [debug] [Thread-1 (]: Finished running node model.senegal_export.stg_dates
+[0m13:14:13.538964 [debug] [Thread-1 (]: Began running node model.senegal_export.stg_fournisseurs
+[0m13:14:13.543098 [info ] [Thread-1 (]: 3 of 7 START sql view model public.stg_fournisseurs ............................ [RUN]
+[0m13:14:13.547299 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.senegal_export.stg_dates, now model.senegal_export.stg_fournisseurs)
+[0m13:14:13.551159 [debug] [Thread-1 (]: Began compiling node model.senegal_export.stg_fournisseurs
+[0m13:14:13.566849 [debug] [Thread-1 (]: Writing injected SQL for node "model.senegal_export.stg_fournisseurs"
+[0m13:14:13.598068 [debug] [Thread-1 (]: Began executing node model.senegal_export.stg_fournisseurs
+[0m13:14:13.610397 [debug] [Thread-1 (]: Writing runtime sql for node "model.senegal_export.stg_fournisseurs"
+[0m13:14:13.640155 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_fournisseurs"
+[0m13:14:13.643531 [debug] [Thread-1 (]: On model.senegal_export.stg_fournisseurs: BEGIN
+[0m13:14:13.647383 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:14:13.670179 [debug] [Thread-1 (]: SQL status: BEGIN in 0.023 seconds
+[0m13:14:13.674128 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_fournisseurs"
+[0m13:14:13.678314 [debug] [Thread-1 (]: On model.senegal_export.stg_fournisseurs: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_fournisseurs"} */
+
+  create view "data_warehouse"."public"."stg_fournisseurs__dbt_tmp"
+    
+    
+  as (
+    with source as (
+
+    select
+        id_fournisseur::int     as supplier_id,
+        nom_fournisseur         as supplier_name,
+        type_engrais_fourni     as fertilizer_type
+    from "data_warehouse"."public_raw"."raw_fournisseurs"
+
+)
+
+select * from source
+  );
+[0m13:14:13.687842 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.006 seconds
+[0m13:14:13.697786 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_fournisseurs"
+[0m13:14:13.701167 [debug] [Thread-1 (]: On model.senegal_export.stg_fournisseurs: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_fournisseurs"} */
+alter table "data_warehouse"."public"."stg_fournisseurs" rename to "stg_fournisseurs__dbt_backup"
+[0m13:14:13.705996 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.002 seconds
+[0m13:14:13.715668 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_fournisseurs"
+[0m13:14:13.718956 [debug] [Thread-1 (]: On model.senegal_export.stg_fournisseurs: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_fournisseurs"} */
+alter table "data_warehouse"."public"."stg_fournisseurs__dbt_tmp" rename to "stg_fournisseurs"
+[0m13:14:13.723604 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.002 seconds
+[0m13:14:13.729183 [debug] [Thread-1 (]: On model.senegal_export.stg_fournisseurs: COMMIT
+[0m13:14:13.732086 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_fournisseurs"
+[0m13:14:13.734817 [debug] [Thread-1 (]: On model.senegal_export.stg_fournisseurs: COMMIT
+[0m13:14:13.741823 [debug] [Thread-1 (]: SQL status: COMMIT in 0.004 seconds
+[0m13:14:13.749970 [debug] [Thread-1 (]: Applying DROP to: "data_warehouse"."public"."stg_fournisseurs__dbt_backup"
+[0m13:14:13.753681 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_fournisseurs"
+[0m13:14:13.756926 [debug] [Thread-1 (]: On model.senegal_export.stg_fournisseurs: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_fournisseurs"} */
+drop view if exists "data_warehouse"."public"."stg_fournisseurs__dbt_backup" cascade
+[0m13:14:13.766939 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.007 seconds
+[0m13:14:13.772662 [debug] [Thread-1 (]: On model.senegal_export.stg_fournisseurs: Close
+[0m13:14:13.776508 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '63eb8d47-0d2a-46ee-96de-a736e2d84f3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75a914cbded0>]}
+[0m13:14:13.780045 [info ] [Thread-1 (]: 3 of 7 OK created sql view model public.stg_fournisseurs ....................... [[32mCREATE VIEW[0m in 0.23s]
+[0m13:14:13.783909 [debug] [Thread-1 (]: Finished running node model.senegal_export.stg_fournisseurs
+[0m13:14:13.787168 [debug] [Thread-1 (]: Began running node model.senegal_export.stg_meteo
+[0m13:14:13.790393 [info ] [Thread-1 (]: 4 of 7 START sql view model public.stg_meteo ................................... [RUN]
+[0m13:14:13.793603 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.senegal_export.stg_fournisseurs, now model.senegal_export.stg_meteo)
+[0m13:14:13.796686 [debug] [Thread-1 (]: Began compiling node model.senegal_export.stg_meteo
+[0m13:14:13.806010 [debug] [Thread-1 (]: Writing injected SQL for node "model.senegal_export.stg_meteo"
+[0m13:14:13.834745 [debug] [Thread-1 (]: Began executing node model.senegal_export.stg_meteo
+[0m13:14:13.847551 [debug] [Thread-1 (]: Writing runtime sql for node "model.senegal_export.stg_meteo"
+[0m13:14:13.876317 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_meteo"
+[0m13:14:13.880082 [debug] [Thread-1 (]: On model.senegal_export.stg_meteo: BEGIN
+[0m13:14:13.883950 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:14:13.906985 [debug] [Thread-1 (]: SQL status: BEGIN in 0.023 seconds
+[0m13:14:13.910423 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_meteo"
+[0m13:14:13.913894 [debug] [Thread-1 (]: On model.senegal_export.stg_meteo: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_meteo"} */
+
+  create view "data_warehouse"."public"."stg_meteo__dbt_tmp"
+    
+    
+  as (
+    WITH source AS (
+    SELECT * FROM "data_warehouse"."public_raw"."raw_meteo"
+)
+SELECT
+    CAST(id_meteo AS INT) AS id_meteo,
+    CAST(pluviometrie_mm AS FLOAT) AS pluviometrie_mm,
+    CAST(temperature_moyenne_celsius AS FLOAT) AS temperature_moyenne_celsius
+FROM source
+WHERE id_meteo IS NOT NULL -- Suppression des lignes vides
+  );
+[0m13:14:13.924941 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.008 seconds
+[0m13:14:13.938524 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_meteo"
+[0m13:14:13.942691 [debug] [Thread-1 (]: On model.senegal_export.stg_meteo: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_meteo"} */
+alter table "data_warehouse"."public"."stg_meteo" rename to "stg_meteo__dbt_backup"
+[0m13:14:13.948001 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.002 seconds
+[0m13:14:13.959043 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_meteo"
+[0m13:14:13.962449 [debug] [Thread-1 (]: On model.senegal_export.stg_meteo: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_meteo"} */
+alter table "data_warehouse"."public"."stg_meteo__dbt_tmp" rename to "stg_meteo"
+[0m13:14:13.967503 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.002 seconds
+[0m13:14:13.973489 [debug] [Thread-1 (]: On model.senegal_export.stg_meteo: COMMIT
+[0m13:14:13.975729 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_meteo"
+[0m13:14:13.977982 [debug] [Thread-1 (]: On model.senegal_export.stg_meteo: COMMIT
+[0m13:14:13.985803 [debug] [Thread-1 (]: SQL status: COMMIT in 0.002 seconds
+[0m13:14:13.993454 [debug] [Thread-1 (]: Applying DROP to: "data_warehouse"."public"."stg_meteo__dbt_backup"
+[0m13:14:13.995856 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_meteo"
+[0m13:14:13.997840 [debug] [Thread-1 (]: On model.senegal_export.stg_meteo: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_meteo"} */
+drop view if exists "data_warehouse"."public"."stg_meteo__dbt_backup" cascade
+[0m13:14:14.004457 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.004 seconds
+[0m13:14:14.008338 [debug] [Thread-1 (]: On model.senegal_export.stg_meteo: Close
+[0m13:14:14.010833 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '63eb8d47-0d2a-46ee-96de-a736e2d84f3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75a914de0850>]}
+[0m13:14:14.013705 [info ] [Thread-1 (]: 4 of 7 OK created sql view model public.stg_meteo .............................. [[32mCREATE VIEW[0m in 0.22s]
+[0m13:14:14.016393 [debug] [Thread-1 (]: Finished running node model.senegal_export.stg_meteo
+[0m13:14:14.018470 [debug] [Thread-1 (]: Began running node model.senegal_export.stg_parcelles
+[0m13:14:14.020935 [info ] [Thread-1 (]: 5 of 7 START sql view model public.stg_parcelles ............................... [RUN]
+[0m13:14:14.033274 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.senegal_export.stg_meteo, now model.senegal_export.stg_parcelles)
+[0m13:14:14.040790 [debug] [Thread-1 (]: Began compiling node model.senegal_export.stg_parcelles
+[0m13:14:14.055112 [debug] [Thread-1 (]: Writing injected SQL for node "model.senegal_export.stg_parcelles"
+[0m13:14:14.082642 [debug] [Thread-1 (]: Began executing node model.senegal_export.stg_parcelles
+[0m13:14:14.093930 [debug] [Thread-1 (]: Writing runtime sql for node "model.senegal_export.stg_parcelles"
+[0m13:14:14.112179 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_parcelles"
+[0m13:14:14.114631 [debug] [Thread-1 (]: On model.senegal_export.stg_parcelles: BEGIN
+[0m13:14:14.117153 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:14:14.132555 [debug] [Thread-1 (]: SQL status: BEGIN in 0.015 seconds
+[0m13:14:14.134285 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_parcelles"
+[0m13:14:14.136257 [debug] [Thread-1 (]: On model.senegal_export.stg_parcelles: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_parcelles"} */
+
+  create view "data_warehouse"."public"."stg_parcelles__dbt_tmp"
+    
+    
+  as (
+    WITH source AS (
+    SELECT * FROM "data_warehouse"."public_raw"."raw_parcelles"
+)
+SELECT
+    CAST(id_parcelle AS INT) AS id_parcelle,
+    CAST(surface_hectares AS FLOAT) AS surface_hectares,
+    localisation,
+    type_sol
+FROM source
+WHERE id_parcelle IS NOT NULL -- Suppression des lignes vides
+  );
+[0m13:14:14.141980 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.003 seconds
+[0m13:14:14.149254 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_parcelles"
+[0m13:14:14.151215 [debug] [Thread-1 (]: On model.senegal_export.stg_parcelles: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_parcelles"} */
+alter table "data_warehouse"."public"."stg_parcelles" rename to "stg_parcelles__dbt_backup"
+[0m13:14:14.154000 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m13:14:14.161299 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_parcelles"
+[0m13:14:14.163174 [debug] [Thread-1 (]: On model.senegal_export.stg_parcelles: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_parcelles"} */
+alter table "data_warehouse"."public"."stg_parcelles__dbt_tmp" rename to "stg_parcelles"
+[0m13:14:14.166042 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m13:14:14.169115 [debug] [Thread-1 (]: On model.senegal_export.stg_parcelles: COMMIT
+[0m13:14:14.171056 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_parcelles"
+[0m13:14:14.173228 [debug] [Thread-1 (]: On model.senegal_export.stg_parcelles: COMMIT
+[0m13:14:14.176776 [debug] [Thread-1 (]: SQL status: COMMIT in 0.002 seconds
+[0m13:14:14.181578 [debug] [Thread-1 (]: Applying DROP to: "data_warehouse"."public"."stg_parcelles__dbt_backup"
+[0m13:14:14.183844 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_parcelles"
+[0m13:14:14.185944 [debug] [Thread-1 (]: On model.senegal_export.stg_parcelles: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_parcelles"} */
+drop view if exists "data_warehouse"."public"."stg_parcelles__dbt_backup" cascade
+[0m13:14:14.192570 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.005 seconds
+[0m13:14:14.195856 [debug] [Thread-1 (]: On model.senegal_export.stg_parcelles: Close
+[0m13:14:14.198025 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '63eb8d47-0d2a-46ee-96de-a736e2d84f3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75a914cbd0f0>]}
+[0m13:14:14.200194 [info ] [Thread-1 (]: 5 of 7 OK created sql view model public.stg_parcelles .......................... [[32mCREATE VIEW[0m in 0.17s]
+[0m13:14:14.202461 [debug] [Thread-1 (]: Finished running node model.senegal_export.stg_parcelles
+[0m13:14:14.204464 [debug] [Thread-1 (]: Began running node model.senegal_export.stg_produits
+[0m13:14:14.206575 [info ] [Thread-1 (]: 6 of 7 START sql view model public.stg_produits ................................ [RUN]
+[0m13:14:14.208745 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.senegal_export.stg_parcelles, now model.senegal_export.stg_produits)
+[0m13:14:14.210568 [debug] [Thread-1 (]: Began compiling node model.senegal_export.stg_produits
+[0m13:14:14.216119 [debug] [Thread-1 (]: Writing injected SQL for node "model.senegal_export.stg_produits"
+[0m13:14:14.234800 [debug] [Thread-1 (]: Began executing node model.senegal_export.stg_produits
+[0m13:14:14.245434 [debug] [Thread-1 (]: Writing runtime sql for node "model.senegal_export.stg_produits"
+[0m13:14:14.263945 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_produits"
+[0m13:14:14.265812 [debug] [Thread-1 (]: On model.senegal_export.stg_produits: BEGIN
+[0m13:14:14.267582 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:14:14.280929 [debug] [Thread-1 (]: SQL status: BEGIN in 0.013 seconds
+[0m13:14:14.282932 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_produits"
+[0m13:14:14.284931 [debug] [Thread-1 (]: On model.senegal_export.stg_produits: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_produits"} */
+
+  create view "data_warehouse"."public"."stg_produits__dbt_tmp"
+    
+    
+  as (
+    WITH source AS (
+    SELECT * FROM "data_warehouse"."public_raw"."raw_produits"
+)
+SELECT
+    CAST(id_produit AS INT) AS id_produit,
+    nom_produit,
+    variete
+FROM source
+WHERE id_produit IS NOT NULL -- Suppression des lignes vides
+  );
+[0m13:14:14.290681 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.004 seconds
+[0m13:14:14.296959 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_produits"
+[0m13:14:14.298794 [debug] [Thread-1 (]: On model.senegal_export.stg_produits: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_produits"} */
+alter table "data_warehouse"."public"."stg_produits" rename to "stg_produits__dbt_backup"
+[0m13:14:14.302037 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m13:14:14.310083 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_produits"
+[0m13:14:14.312085 [debug] [Thread-1 (]: On model.senegal_export.stg_produits: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_produits"} */
+alter table "data_warehouse"."public"."stg_produits__dbt_tmp" rename to "stg_produits"
+[0m13:14:14.314767 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m13:14:14.318092 [debug] [Thread-1 (]: On model.senegal_export.stg_produits: COMMIT
+[0m13:14:14.320308 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_produits"
+[0m13:14:14.322663 [debug] [Thread-1 (]: On model.senegal_export.stg_produits: COMMIT
+[0m13:14:14.327687 [debug] [Thread-1 (]: SQL status: COMMIT in 0.003 seconds
+[0m13:14:14.332722 [debug] [Thread-1 (]: Applying DROP to: "data_warehouse"."public"."stg_produits__dbt_backup"
+[0m13:14:14.335116 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_produits"
+[0m13:14:14.337190 [debug] [Thread-1 (]: On model.senegal_export.stg_produits: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_produits"} */
+drop view if exists "data_warehouse"."public"."stg_produits__dbt_backup" cascade
+[0m13:14:14.343948 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.005 seconds
+[0m13:14:14.347267 [debug] [Thread-1 (]: On model.senegal_export.stg_produits: Close
+[0m13:14:14.349400 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '63eb8d47-0d2a-46ee-96de-a736e2d84f3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75a914d43be0>]}
+[0m13:14:14.353778 [info ] [Thread-1 (]: 6 of 7 OK created sql view model public.stg_produits ........................... [[32mCREATE VIEW[0m in 0.14s]
+[0m13:14:14.356043 [debug] [Thread-1 (]: Finished running node model.senegal_export.stg_produits
+[0m13:14:14.357928 [debug] [Thread-1 (]: Began running node model.senegal_export.fct_campagne_performances
+[0m13:14:14.360082 [info ] [Thread-1 (]: 7 of 7 START sql view model public.fct_campagne_performances ................... [RUN]
+[0m13:14:14.362108 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.senegal_export.stg_produits, now model.senegal_export.fct_campagne_performances)
+[0m13:14:14.364030 [debug] [Thread-1 (]: Began compiling node model.senegal_export.fct_campagne_performances
+[0m13:14:14.370834 [debug] [Thread-1 (]: Writing injected SQL for node "model.senegal_export.fct_campagne_performances"
+[0m13:14:14.391284 [debug] [Thread-1 (]: Began executing node model.senegal_export.fct_campagne_performances
+[0m13:14:14.398341 [debug] [Thread-1 (]: Writing runtime sql for node "model.senegal_export.fct_campagne_performances"
+[0m13:14:14.428400 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.fct_campagne_performances"
+[0m13:14:14.435591 [debug] [Thread-1 (]: On model.senegal_export.fct_campagne_performances: BEGIN
+[0m13:14:14.441750 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m13:14:14.488702 [debug] [Thread-1 (]: SQL status: BEGIN in 0.047 seconds
+[0m13:14:14.495397 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.fct_campagne_performances"
+[0m13:14:14.502292 [debug] [Thread-1 (]: On model.senegal_export.fct_campagne_performances: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.fct_campagne_performances"} */
+
+  create view "data_warehouse"."public"."fct_campagne_performances__dbt_tmp"
+    
+    
+  as (
+    WITH stg_campagne AS (
+    SELECT * FROM "data_warehouse"."public"."stg_campagne"
+),
+parcelles AS (
+    SELECT * FROM "data_warehouse"."public_raw"."raw_parcelles"
+),
+produits AS (
+    SELECT * FROM "data_warehouse"."public_raw"."raw_produits"
+),
+meteo AS (
+    SELECT * FROM "data_warehouse"."public_raw"."raw_meteo"
+)
+
+SELECT
+    c.id_campagne,
+    p.nom_produit,
+    p.variete,
+    pa.localisation,
+    -- Q1: Rendement (Tonnage / Surface)
+    c.tonnage_recolte / NULLIF(pa.surface_hectares, 0) AS rendement_par_hectare,
+    -- Q2: Taux de perte
+    ((c.tonnage_recolte - c.tonnage_exporte) / NULLIF(c.tonnage_recolte, 0)) * 100 AS taux_perte_pourcentage,
+    -- Q3: Influence Pluviométrie
+    m.pluviometrie_mm,
+    -- Q4: Coût en FCFA
+    c.cout_intrants_fcfa
+FROM stg_campagne c
+LEFT JOIN parcelles pa ON c.id_parcelle = pa.id_parcelle
+LEFT JOIN produits p ON c.id_produit = p.id_produit
+LEFT JOIN meteo m ON c.id_meteo = m.id_meteo
+  );
+[0m13:14:14.545737 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.035 seconds
+[0m13:14:14.567666 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.fct_campagne_performances"
+[0m13:14:14.574495 [debug] [Thread-1 (]: On model.senegal_export.fct_campagne_performances: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.fct_campagne_performances"} */
+alter table "data_warehouse"."public"."fct_campagne_performances__dbt_tmp" rename to "fct_campagne_performances"
+[0m13:14:14.586351 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.004 seconds
+[0m13:14:14.597489 [debug] [Thread-1 (]: On model.senegal_export.fct_campagne_performances: COMMIT
+[0m13:14:14.604055 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.fct_campagne_performances"
+[0m13:14:14.610878 [debug] [Thread-1 (]: On model.senegal_export.fct_campagne_performances: COMMIT
+[0m13:14:14.622329 [debug] [Thread-1 (]: SQL status: COMMIT in 0.005 seconds
+[0m13:14:14.640586 [debug] [Thread-1 (]: Applying DROP to: "data_warehouse"."public"."fct_campagne_performances__dbt_backup"
+[0m13:14:14.647973 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.fct_campagne_performances"
+[0m13:14:14.654451 [debug] [Thread-1 (]: On model.senegal_export.fct_campagne_performances: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.fct_campagne_performances"} */
+drop view if exists "data_warehouse"."public"."fct_campagne_performances__dbt_backup" cascade
+[0m13:14:14.663168 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.002 seconds
+[0m13:14:14.675237 [debug] [Thread-1 (]: On model.senegal_export.fct_campagne_performances: Close
+[0m13:14:14.682740 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '63eb8d47-0d2a-46ee-96de-a736e2d84f3f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75a9158964a0>]}
+[0m13:14:14.690552 [info ] [Thread-1 (]: 7 of 7 OK created sql view model public.fct_campagne_performances .............. [[32mCREATE VIEW[0m in 0.32s]
+[0m13:14:14.698805 [debug] [Thread-1 (]: Finished running node model.senegal_export.fct_campagne_performances
+[0m13:14:14.712657 [debug] [MainThread]: Using postgres connection "master"
+[0m13:14:14.720154 [debug] [MainThread]: On master: BEGIN
+[0m13:14:14.727587 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m13:14:14.808144 [debug] [MainThread]: SQL status: BEGIN in 0.081 seconds
+[0m13:14:14.812745 [debug] [MainThread]: On master: COMMIT
+[0m13:14:14.817070 [debug] [MainThread]: Using postgres connection "master"
+[0m13:14:14.821936 [debug] [MainThread]: On master: COMMIT
+[0m13:14:14.827749 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m13:14:14.833187 [debug] [MainThread]: On master: Close
+[0m13:14:14.838120 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m13:14:14.842548 [debug] [MainThread]: Connection 'model.senegal_export.fct_campagne_performances' was properly closed.
+[0m13:14:14.847146 [info ] [MainThread]: 
+[0m13:14:14.851435 [info ] [MainThread]: Finished running 7 view models in 0 hours 0 minutes and 2.39 seconds (2.39s).
+[0m13:14:14.860610 [debug] [MainThread]: Command end result
+[0m13:14:15.129764 [info ] [MainThread]: 
+[0m13:14:15.132167 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m13:14:15.134397 [info ] [MainThread]: 
+[0m13:14:15.136739 [info ] [MainThread]: Done. PASS=7 WARN=0 ERROR=0 SKIP=0 TOTAL=7
+[0m13:14:15.140426 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 7.75217, "process_user_time": 5.205319, "process_kernel_time": 0.701568, "process_mem_max_rss": "152016", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m13:14:15.142829 [debug] [MainThread]: Command `dbt run` succeeded at 13:14:15.142613 after 7.75 seconds
+[0m13:14:15.145048 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75a919a50b80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75a917b69180>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x75a915b80910>]}
+[0m13:14:15.147101 [debug] [MainThread]: Flushing usage events
+[0m14:00:06.036206 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x773032e30b50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77303097c2e0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77303097c280>]}
+
+
+============================== 14:00:06.046477 | e5b235d5-c3ea-4c51-8bd7-9803b18119e8 ==============================
+[0m14:00:06.046477 [info ] [MainThread]: Running with dbt=1.8.7
+[0m14:00:06.048983 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '.', 'debug': 'False', 'version_check': 'True', 'log_path': '/opt/airflow/dbt_project/senegal_export/logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt seed --profiles-dir .', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m14:00:06.525817 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'e5b235d5-c3ea-4c51-8bd7-9803b18119e8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x773030b16a40>]}
+[0m14:00:06.621632 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'e5b235d5-c3ea-4c51-8bd7-9803b18119e8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x773030bb9d50>]}
+[0m14:00:06.625163 [info ] [MainThread]: Registered adapter: postgres=1.9.1
+[0m14:00:06.874308 [debug] [MainThread]: checksum: 4af21dafb485259c48497ac86b711ddb1982f3d0f1c0ca4e09356de488b753c0, vars: {}, profile: , target: , version: 1.8.7
+[0m14:00:10.915140 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m14:00:10.921120 [debug] [MainThread]: Partial parsing: updated file: senegal_export://models/senegal_export/staging/stg_campagne.sql
+[0m14:00:11.420749 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.senegal_export.staging
+- models.senegal_export.marts
+[0m14:00:11.434351 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'e5b235d5-c3ea-4c51-8bd7-9803b18119e8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x773030bb9b70>]}
+[0m14:00:11.718218 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'e5b235d5-c3ea-4c51-8bd7-9803b18119e8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77302ee3a020>]}
+[0m14:00:11.720872 [info ] [MainThread]: Found 7 models, 6 seeds, 6 data tests, 544 macros
+[0m14:00:11.723007 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e5b235d5-c3ea-4c51-8bd7-9803b18119e8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7730309be080>]}
+[0m14:00:11.727156 [info ] [MainThread]: 
+[0m14:00:11.729494 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m14:00:11.737448 [debug] [ThreadPool]: Acquiring new postgres connection 'list_data_warehouse'
+[0m14:00:11.807764 [debug] [ThreadPool]: Using postgres connection "list_data_warehouse"
+[0m14:00:11.809420 [debug] [ThreadPool]: On list_data_warehouse: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "connection_name": "list_data_warehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m14:00:11.812935 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:00:11.858178 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.046 seconds
+[0m14:00:11.864175 [debug] [ThreadPool]: On list_data_warehouse: Close
+[0m14:00:11.872569 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_data_warehouse, now list_data_warehouse_public_raw)
+[0m14:00:11.891385 [debug] [ThreadPool]: Using postgres connection "list_data_warehouse_public_raw"
+[0m14:00:11.895146 [debug] [ThreadPool]: On list_data_warehouse_public_raw: BEGIN
+[0m14:00:11.898463 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:00:11.918499 [debug] [ThreadPool]: SQL status: BEGIN in 0.020 seconds
+[0m14:00:11.921158 [debug] [ThreadPool]: Using postgres connection "list_data_warehouse_public_raw"
+[0m14:00:11.924240 [debug] [ThreadPool]: On list_data_warehouse_public_raw: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "connection_name": "list_data_warehouse_public_raw"} */
+select
+      'data_warehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_raw'
+    union all
+    select
+      'data_warehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_raw'
+    union all
+    select
+      'data_warehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_raw'
+  
+[0m14:00:11.940324 [debug] [ThreadPool]: SQL status: SELECT 6 in 0.013 seconds
+[0m14:00:11.945489 [debug] [ThreadPool]: On list_data_warehouse_public_raw: ROLLBACK
+[0m14:00:11.949109 [debug] [ThreadPool]: On list_data_warehouse_public_raw: Close
+[0m14:00:11.952024 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_data_warehouse_public_raw, now list_data_warehouse_public)
+[0m14:00:11.957914 [debug] [ThreadPool]: Using postgres connection "list_data_warehouse_public"
+[0m14:00:11.960444 [debug] [ThreadPool]: On list_data_warehouse_public: BEGIN
+[0m14:00:11.962203 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:00:11.975466 [debug] [ThreadPool]: SQL status: BEGIN in 0.013 seconds
+[0m14:00:11.977522 [debug] [ThreadPool]: Using postgres connection "list_data_warehouse_public"
+[0m14:00:11.979433 [debug] [ThreadPool]: On list_data_warehouse_public: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "connection_name": "list_data_warehouse_public"} */
+select
+      'data_warehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'data_warehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'data_warehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m14:00:11.991389 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.010 seconds
+[0m14:00:11.995112 [debug] [ThreadPool]: On list_data_warehouse_public: ROLLBACK
+[0m14:00:11.997469 [debug] [ThreadPool]: On list_data_warehouse_public: Close
+[0m14:00:12.008740 [debug] [MainThread]: Using postgres connection "master"
+[0m14:00:12.011510 [debug] [MainThread]: On master: BEGIN
+[0m14:00:12.013526 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:00:12.028206 [debug] [MainThread]: SQL status: BEGIN in 0.015 seconds
+[0m14:00:12.030670 [debug] [MainThread]: Using postgres connection "master"
+[0m14:00:12.033147 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m14:00:12.049238 [debug] [MainThread]: SQL status: SELECT 10 in 0.014 seconds
+[0m14:00:12.056609 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'e5b235d5-c3ea-4c51-8bd7-9803b18119e8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77302f0c7d30>]}
+[0m14:00:12.059390 [debug] [MainThread]: On master: ROLLBACK
+[0m14:00:12.062365 [debug] [MainThread]: Using postgres connection "master"
+[0m14:00:12.065198 [debug] [MainThread]: On master: BEGIN
+[0m14:00:12.068860 [debug] [MainThread]: SQL status: BEGIN in 0.001 seconds
+[0m14:00:12.071632 [debug] [MainThread]: On master: COMMIT
+[0m14:00:12.074230 [debug] [MainThread]: Using postgres connection "master"
+[0m14:00:12.077326 [debug] [MainThread]: On master: COMMIT
+[0m14:00:12.080874 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m14:00:12.084146 [debug] [MainThread]: On master: Close
+[0m14:00:12.087743 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m14:00:12.090877 [info ] [MainThread]: 
+[0m14:00:12.109850 [debug] [Thread-1 (]: Began running node seed.senegal_export.raw_calendrier
+[0m14:00:12.113057 [info ] [Thread-1 (]: 1 of 6 START seed file public_raw.raw_calendrier ............................... [RUN]
+[0m14:00:12.115829 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_data_warehouse_public, now seed.senegal_export.raw_calendrier)
+[0m14:00:12.118326 [debug] [Thread-1 (]: Began compiling node seed.senegal_export.raw_calendrier
+[0m14:00:12.120719 [debug] [Thread-1 (]: Began executing node seed.senegal_export.raw_calendrier
+[0m14:00:12.198528 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_calendrier"
+[0m14:00:12.201385 [debug] [Thread-1 (]: On seed.senegal_export.raw_calendrier: BEGIN
+[0m14:00:12.203587 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:00:12.219404 [debug] [Thread-1 (]: SQL status: BEGIN in 0.016 seconds
+[0m14:00:12.222247 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_calendrier"
+[0m14:00:12.224736 [debug] [Thread-1 (]: On seed.senegal_export.raw_calendrier: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "seed.senegal_export.raw_calendrier"} */
+truncate table "data_warehouse"."public_raw"."raw_calendrier"
+[0m14:00:12.242067 [debug] [Thread-1 (]: SQL status: TRUNCATE TABLE in 0.014 seconds
+[0m14:00:12.357153 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_calendrier"
+[0m14:00:12.359588 [debug] [Thread-1 (]: On seed.senegal_export.raw_calendrier: 
+          insert into "data_warehouse"."public_raw"."raw_calendrier" (date_id, date_complete) values
+          (%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),(%s,%s),...
+[0m14:00:12.365325 [debug] [Thread-1 (]: SQL status: INSERT 0 365 in 0.004 seconds
+[0m14:00:12.373392 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.senegal_export.raw_calendrier"
+[0m14:00:12.435625 [debug] [Thread-1 (]: On seed.senegal_export.raw_calendrier: COMMIT
+[0m14:00:12.437696 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_calendrier"
+[0m14:00:12.439254 [debug] [Thread-1 (]: On seed.senegal_export.raw_calendrier: COMMIT
+[0m14:00:12.445229 [debug] [Thread-1 (]: SQL status: COMMIT in 0.004 seconds
+[0m14:00:12.449093 [debug] [Thread-1 (]: On seed.senegal_export.raw_calendrier: Close
+[0m14:00:12.452354 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e5b235d5-c3ea-4c51-8bd7-9803b18119e8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77302d19d6f0>]}
+[0m14:00:12.454419 [info ] [Thread-1 (]: 1 of 6 OK loaded seed file public_raw.raw_calendrier ........................... [[32mINSERT 365[0m in 0.34s]
+[0m14:00:12.456605 [debug] [Thread-1 (]: Finished running node seed.senegal_export.raw_calendrier
+[0m14:00:12.458382 [debug] [Thread-1 (]: Began running node seed.senegal_export.raw_campagne
+[0m14:00:12.460150 [info ] [Thread-1 (]: 2 of 6 START seed file public_raw.raw_campagne ................................. [RUN]
+[0m14:00:12.462234 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly seed.senegal_export.raw_calendrier, now seed.senegal_export.raw_campagne)
+[0m14:00:12.463923 [debug] [Thread-1 (]: Began compiling node seed.senegal_export.raw_campagne
+[0m14:00:12.465992 [debug] [Thread-1 (]: Began executing node seed.senegal_export.raw_campagne
+[0m14:00:12.521561 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_campagne"
+[0m14:00:12.531772 [debug] [Thread-1 (]: On seed.senegal_export.raw_campagne: BEGIN
+[0m14:00:12.537587 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:00:12.558497 [debug] [Thread-1 (]: SQL status: BEGIN in 0.021 seconds
+[0m14:00:12.561003 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_campagne"
+[0m14:00:12.563103 [debug] [Thread-1 (]: On seed.senegal_export.raw_campagne: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "seed.senegal_export.raw_campagne"} */
+truncate table "data_warehouse"."public_raw"."raw_campagne"
+[0m14:00:12.576143 [debug] [Thread-1 (]: SQL status: TRUNCATE TABLE in 0.011 seconds
+[0m14:00:13.295256 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_campagne"
+[0m14:00:13.297905 [debug] [Thread-1 (]: On seed.senegal_export.raw_campagne: 
+          insert into "data_warehouse"."public_raw"."raw_campagne" (id_campagne, id_parcelle, id_produit, id_meteo, id_fournisseur, date_id, tonnage_recolte, tonnage_exporte, cout_intrants_devise, devise_origine) values
+          (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s),(%s,%s,%s,%s,%s,%s,%s,%s,...
+[0m14:00:13.316145 [debug] [Thread-1 (]: SQL status: INSERT 0 500 in 0.016 seconds
+[0m14:00:13.319292 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.senegal_export.raw_campagne"
+[0m14:00:13.341335 [debug] [Thread-1 (]: On seed.senegal_export.raw_campagne: COMMIT
+[0m14:00:13.344536 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_campagne"
+[0m14:00:13.348046 [debug] [Thread-1 (]: On seed.senegal_export.raw_campagne: COMMIT
+[0m14:00:13.358731 [debug] [Thread-1 (]: SQL status: COMMIT in 0.007 seconds
+[0m14:00:13.363255 [debug] [Thread-1 (]: On seed.senegal_export.raw_campagne: Close
+[0m14:00:13.367078 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e5b235d5-c3ea-4c51-8bd7-9803b18119e8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x773031701840>]}
+[0m14:00:13.370415 [info ] [Thread-1 (]: 2 of 6 OK loaded seed file public_raw.raw_campagne ............................. [[32mINSERT 500[0m in 0.90s]
+[0m14:00:13.374160 [debug] [Thread-1 (]: Finished running node seed.senegal_export.raw_campagne
+[0m14:00:13.377371 [debug] [Thread-1 (]: Began running node seed.senegal_export.raw_fournisseurs
+[0m14:00:13.380827 [info ] [Thread-1 (]: 3 of 6 START seed file public_raw.raw_fournisseurs ............................. [RUN]
+[0m14:00:13.384064 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly seed.senegal_export.raw_campagne, now seed.senegal_export.raw_fournisseurs)
+[0m14:00:13.387031 [debug] [Thread-1 (]: Began compiling node seed.senegal_export.raw_fournisseurs
+[0m14:00:13.389962 [debug] [Thread-1 (]: Began executing node seed.senegal_export.raw_fournisseurs
+[0m14:00:13.417501 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_fournisseurs"
+[0m14:00:13.421138 [debug] [Thread-1 (]: On seed.senegal_export.raw_fournisseurs: BEGIN
+[0m14:00:13.425069 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:00:13.453164 [debug] [Thread-1 (]: SQL status: BEGIN in 0.028 seconds
+[0m14:00:13.457456 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_fournisseurs"
+[0m14:00:13.460683 [debug] [Thread-1 (]: On seed.senegal_export.raw_fournisseurs: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "seed.senegal_export.raw_fournisseurs"} */
+truncate table "data_warehouse"."public_raw"."raw_fournisseurs"
+[0m14:00:13.476891 [debug] [Thread-1 (]: SQL status: TRUNCATE TABLE in 0.013 seconds
+[0m14:00:13.486287 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_fournisseurs"
+[0m14:00:13.489310 [debug] [Thread-1 (]: On seed.senegal_export.raw_fournisseurs: 
+          insert into "data_warehouse"."public_raw"."raw_fournisseurs" (id_fournisseur, nom_fournisseur, type_engrais_fourni) values
+          (%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s)
+      ...
+[0m14:00:13.493859 [debug] [Thread-1 (]: SQL status: INSERT 0 8 in 0.001 seconds
+[0m14:00:13.497768 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.senegal_export.raw_fournisseurs"
+[0m14:00:13.523828 [debug] [Thread-1 (]: On seed.senegal_export.raw_fournisseurs: COMMIT
+[0m14:00:13.527156 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_fournisseurs"
+[0m14:00:13.530420 [debug] [Thread-1 (]: On seed.senegal_export.raw_fournisseurs: COMMIT
+[0m14:00:13.539508 [debug] [Thread-1 (]: SQL status: COMMIT in 0.005 seconds
+[0m14:00:13.544231 [debug] [Thread-1 (]: On seed.senegal_export.raw_fournisseurs: Close
+[0m14:00:13.548301 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e5b235d5-c3ea-4c51-8bd7-9803b18119e8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77302d16ffa0>]}
+[0m14:00:13.551782 [info ] [Thread-1 (]: 3 of 6 OK loaded seed file public_raw.raw_fournisseurs ......................... [[32mINSERT 8[0m in 0.16s]
+[0m14:00:13.555649 [debug] [Thread-1 (]: Finished running node seed.senegal_export.raw_fournisseurs
+[0m14:00:13.559221 [debug] [Thread-1 (]: Began running node seed.senegal_export.raw_meteo
+[0m14:00:13.563298 [info ] [Thread-1 (]: 4 of 6 START seed file public_raw.raw_meteo .................................... [RUN]
+[0m14:00:13.567599 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly seed.senegal_export.raw_fournisseurs, now seed.senegal_export.raw_meteo)
+[0m14:00:13.570694 [debug] [Thread-1 (]: Began compiling node seed.senegal_export.raw_meteo
+[0m14:00:13.574411 [debug] [Thread-1 (]: Began executing node seed.senegal_export.raw_meteo
+[0m14:00:13.620988 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_meteo"
+[0m14:00:13.624058 [debug] [Thread-1 (]: On seed.senegal_export.raw_meteo: BEGIN
+[0m14:00:13.627572 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:00:13.649355 [debug] [Thread-1 (]: SQL status: BEGIN in 0.022 seconds
+[0m14:00:13.652669 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_meteo"
+[0m14:00:13.655889 [debug] [Thread-1 (]: On seed.senegal_export.raw_meteo: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "seed.senegal_export.raw_meteo"} */
+truncate table "data_warehouse"."public_raw"."raw_meteo"
+[0m14:00:13.661857 [debug] [Thread-1 (]: SQL status: TRUNCATE TABLE in 0.003 seconds
+[0m14:00:13.867472 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_meteo"
+[0m14:00:13.872284 [debug] [Thread-1 (]: On seed.senegal_export.raw_meteo: 
+          insert into "data_warehouse"."public_raw"."raw_meteo" (id_meteo, pluviometrie_mm, temperature_moyenne_celsius) values
+          (%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s)...
+[0m14:00:13.892085 [debug] [Thread-1 (]: SQL status: INSERT 0 365 in 0.016 seconds
+[0m14:00:13.897589 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.senegal_export.raw_meteo"
+[0m14:00:13.934372 [debug] [Thread-1 (]: On seed.senegal_export.raw_meteo: COMMIT
+[0m14:00:13.938768 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_meteo"
+[0m14:00:13.942999 [debug] [Thread-1 (]: On seed.senegal_export.raw_meteo: COMMIT
+[0m14:00:13.956636 [debug] [Thread-1 (]: SQL status: COMMIT in 0.009 seconds
+[0m14:00:13.964327 [debug] [Thread-1 (]: On seed.senegal_export.raw_meteo: Close
+[0m14:00:13.969403 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e5b235d5-c3ea-4c51-8bd7-9803b18119e8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77302c076140>]}
+[0m14:00:13.974073 [info ] [Thread-1 (]: 4 of 6 OK loaded seed file public_raw.raw_meteo ................................ [[32mINSERT 365[0m in 0.40s]
+[0m14:00:13.979869 [debug] [Thread-1 (]: Finished running node seed.senegal_export.raw_meteo
+[0m14:00:13.984987 [debug] [Thread-1 (]: Began running node seed.senegal_export.raw_parcelles
+[0m14:00:13.989732 [info ] [Thread-1 (]: 5 of 6 START seed file public_raw.raw_parcelles ................................ [RUN]
+[0m14:00:13.994597 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly seed.senegal_export.raw_meteo, now seed.senegal_export.raw_parcelles)
+[0m14:00:14.000547 [debug] [Thread-1 (]: Began compiling node seed.senegal_export.raw_parcelles
+[0m14:00:14.004480 [debug] [Thread-1 (]: Began executing node seed.senegal_export.raw_parcelles
+[0m14:00:14.049238 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_parcelles"
+[0m14:00:14.053568 [debug] [Thread-1 (]: On seed.senegal_export.raw_parcelles: BEGIN
+[0m14:00:14.057920 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:00:14.089330 [debug] [Thread-1 (]: SQL status: BEGIN in 0.031 seconds
+[0m14:00:14.093131 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_parcelles"
+[0m14:00:14.097786 [debug] [Thread-1 (]: On seed.senegal_export.raw_parcelles: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "seed.senegal_export.raw_parcelles"} */
+truncate table "data_warehouse"."public_raw"."raw_parcelles"
+[0m14:00:14.115020 [debug] [Thread-1 (]: SQL status: TRUNCATE TABLE in 0.014 seconds
+[0m14:00:14.134911 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_parcelles"
+[0m14:00:14.138115 [debug] [Thread-1 (]: On seed.senegal_export.raw_parcelles: 
+          insert into "data_warehouse"."public_raw"."raw_parcelles" (id_parcelle, surface_hectares, localisation, type_sol) values
+          (%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s),(%s,%s,%s,%s)
+      ...
+[0m14:00:14.143757 [debug] [Thread-1 (]: SQL status: INSERT 0 20 in 0.002 seconds
+[0m14:00:14.148208 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.senegal_export.raw_parcelles"
+[0m14:00:14.175105 [debug] [Thread-1 (]: On seed.senegal_export.raw_parcelles: COMMIT
+[0m14:00:14.178387 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_parcelles"
+[0m14:00:14.181929 [debug] [Thread-1 (]: On seed.senegal_export.raw_parcelles: COMMIT
+[0m14:00:14.190391 [debug] [Thread-1 (]: SQL status: COMMIT in 0.005 seconds
+[0m14:00:14.195502 [debug] [Thread-1 (]: On seed.senegal_export.raw_parcelles: Close
+[0m14:00:14.200006 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e5b235d5-c3ea-4c51-8bd7-9803b18119e8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x773031701840>]}
+[0m14:00:14.206518 [info ] [Thread-1 (]: 5 of 6 OK loaded seed file public_raw.raw_parcelles ............................ [[32mINSERT 20[0m in 0.21s]
+[0m14:00:14.211502 [debug] [Thread-1 (]: Finished running node seed.senegal_export.raw_parcelles
+[0m14:00:14.215866 [debug] [Thread-1 (]: Began running node seed.senegal_export.raw_produits
+[0m14:00:14.219734 [info ] [Thread-1 (]: 6 of 6 START seed file public_raw.raw_produits ................................. [RUN]
+[0m14:00:14.223492 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly seed.senegal_export.raw_parcelles, now seed.senegal_export.raw_produits)
+[0m14:00:14.226638 [debug] [Thread-1 (]: Began compiling node seed.senegal_export.raw_produits
+[0m14:00:14.230011 [debug] [Thread-1 (]: Began executing node seed.senegal_export.raw_produits
+[0m14:00:14.259730 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_produits"
+[0m14:00:14.263209 [debug] [Thread-1 (]: On seed.senegal_export.raw_produits: BEGIN
+[0m14:00:14.266550 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:00:14.288660 [debug] [Thread-1 (]: SQL status: BEGIN in 0.022 seconds
+[0m14:00:14.292427 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_produits"
+[0m14:00:14.296002 [debug] [Thread-1 (]: On seed.senegal_export.raw_produits: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "seed.senegal_export.raw_produits"} */
+truncate table "data_warehouse"."public_raw"."raw_produits"
+[0m14:00:14.312445 [debug] [Thread-1 (]: SQL status: TRUNCATE TABLE in 0.013 seconds
+[0m14:00:14.322683 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_produits"
+[0m14:00:14.325988 [debug] [Thread-1 (]: On seed.senegal_export.raw_produits: 
+          insert into "data_warehouse"."public_raw"."raw_produits" (id_produit, nom_produit, variete) values
+          (%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s),(%s,%s,%s)
+      ...
+[0m14:00:14.330470 [debug] [Thread-1 (]: SQL status: INSERT 0 9 in 0.001 seconds
+[0m14:00:14.334137 [debug] [Thread-1 (]: Writing runtime SQL for node "seed.senegal_export.raw_produits"
+[0m14:00:14.359705 [debug] [Thread-1 (]: On seed.senegal_export.raw_produits: COMMIT
+[0m14:00:14.363275 [debug] [Thread-1 (]: Using postgres connection "seed.senegal_export.raw_produits"
+[0m14:00:14.366706 [debug] [Thread-1 (]: On seed.senegal_export.raw_produits: COMMIT
+[0m14:00:14.374538 [debug] [Thread-1 (]: SQL status: COMMIT in 0.005 seconds
+[0m14:00:14.378659 [debug] [Thread-1 (]: On seed.senegal_export.raw_produits: Close
+[0m14:00:14.382259 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'e5b235d5-c3ea-4c51-8bd7-9803b18119e8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77302d164490>]}
+[0m14:00:14.385384 [info ] [Thread-1 (]: 6 of 6 OK loaded seed file public_raw.raw_produits ............................. [[32mINSERT 9[0m in 0.16s]
+[0m14:00:14.389051 [debug] [Thread-1 (]: Finished running node seed.senegal_export.raw_produits
+[0m14:00:14.394301 [debug] [MainThread]: Using postgres connection "master"
+[0m14:00:14.397517 [debug] [MainThread]: On master: BEGIN
+[0m14:00:14.400289 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m14:00:14.420450 [debug] [MainThread]: SQL status: BEGIN in 0.020 seconds
+[0m14:00:14.423450 [debug] [MainThread]: On master: COMMIT
+[0m14:00:14.426399 [debug] [MainThread]: Using postgres connection "master"
+[0m14:00:14.429718 [debug] [MainThread]: On master: COMMIT
+[0m14:00:14.433589 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m14:00:14.436588 [debug] [MainThread]: On master: Close
+[0m14:00:14.439909 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:00:14.442767 [debug] [MainThread]: Connection 'seed.senegal_export.raw_produits' was properly closed.
+[0m14:00:14.446012 [info ] [MainThread]: 
+[0m14:00:14.449002 [info ] [MainThread]: Finished running 6 seeds in 0 hours 0 minutes and 2.72 seconds (2.72s).
+[0m14:00:14.454333 [debug] [MainThread]: Command end result
+[0m14:00:14.639807 [info ] [MainThread]: 
+[0m14:00:14.642134 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m14:00:14.644122 [info ] [MainThread]: 
+[0m14:00:14.646541 [info ] [MainThread]: Done. PASS=6 WARN=0 ERROR=0 SKIP=0 TOTAL=6
+[0m14:00:14.649341 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_success": true, "command_wall_clock_time": 8.754254, "process_user_time": 6.077265, "process_kernel_time": 1.213845, "process_mem_max_rss": "152068", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m14:00:14.651556 [debug] [MainThread]: Command `dbt seed` succeeded at 14:00:14.651369 after 8.76 seconds
+[0m14:00:14.653383 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x773032e30b50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x773030f703a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x77302c0b96f0>]}
+[0m14:00:14.655327 [debug] [MainThread]: Flushing usage events
+[0m14:00:21.694594 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c1bb2f38c40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c1bb0bdb100>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c1bb0bdae60>]}
+
+
+============================== 14:00:21.710269 | 96ef3cfa-c00e-4db0-8f34-8a7eb3d972f8 ==============================
+[0m14:00:21.710269 [info ] [MainThread]: Running with dbt=1.8.7
+[0m14:00:21.714466 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '.', 'debug': 'False', 'warn_error': 'None', 'log_path': '/opt/airflow/dbt_project/senegal_export/logs', 'fail_fast': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'False', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt run --profiles-dir .', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m14:00:22.074324 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '96ef3cfa-c00e-4db0-8f34-8a7eb3d972f8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c1bb2e73ac0>]}
+[0m14:00:22.165316 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '96ef3cfa-c00e-4db0-8f34-8a7eb3d972f8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c1bb0c278b0>]}
+[0m14:00:22.171127 [info ] [MainThread]: Registered adapter: postgres=1.9.1
+[0m14:00:22.420174 [debug] [MainThread]: checksum: 4af21dafb485259c48497ac86b711ddb1982f3d0f1c0ca4e09356de488b753c0, vars: {}, profile: , target: , version: 1.8.7
+[0m14:00:26.889711 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m14:00:26.893223 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m14:00:26.913208 [warn ] [MainThread]: [[33mWARNING[0m]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 2 unused configuration paths:
+- models.senegal_export.marts
+- models.senegal_export.staging
+[0m14:00:26.996399 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '96ef3cfa-c00e-4db0-8f34-8a7eb3d972f8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c1baed8df90>]}
+[0m14:00:27.333126 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '96ef3cfa-c00e-4db0-8f34-8a7eb3d972f8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c1baef728f0>]}
+[0m14:00:27.336419 [info ] [MainThread]: Found 7 models, 6 seeds, 6 data tests, 544 macros
+[0m14:00:27.339544 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '96ef3cfa-c00e-4db0-8f34-8a7eb3d972f8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c1baef714e0>]}
+[0m14:00:27.344996 [info ] [MainThread]: 
+[0m14:00:27.347906 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m14:00:27.358137 [debug] [ThreadPool]: Acquiring new postgres connection 'list_data_warehouse'
+[0m14:00:27.403865 [debug] [ThreadPool]: Using postgres connection "list_data_warehouse"
+[0m14:00:27.405830 [debug] [ThreadPool]: On list_data_warehouse: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "connection_name": "list_data_warehouse"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m14:00:27.407659 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m14:00:27.422831 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.015 seconds
+[0m14:00:27.425624 [debug] [ThreadPool]: On list_data_warehouse: Close
+[0m14:00:27.429734 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_data_warehouse, now list_data_warehouse_public)
+[0m14:00:27.437738 [debug] [ThreadPool]: Using postgres connection "list_data_warehouse_public"
+[0m14:00:27.439554 [debug] [ThreadPool]: On list_data_warehouse_public: BEGIN
+[0m14:00:27.441582 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:00:27.453098 [debug] [ThreadPool]: SQL status: BEGIN in 0.011 seconds
+[0m14:00:27.455014 [debug] [ThreadPool]: Using postgres connection "list_data_warehouse_public"
+[0m14:00:27.456979 [debug] [ThreadPool]: On list_data_warehouse_public: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "connection_name": "list_data_warehouse_public"} */
+select
+      'data_warehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public'
+    union all
+    select
+      'data_warehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public'
+    union all
+    select
+      'data_warehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public'
+  
+[0m14:00:27.477900 [debug] [ThreadPool]: SQL status: SELECT 7 in 0.018 seconds
+[0m14:00:27.484418 [debug] [ThreadPool]: On list_data_warehouse_public: ROLLBACK
+[0m14:00:27.488592 [debug] [ThreadPool]: On list_data_warehouse_public: Close
+[0m14:00:27.493025 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_data_warehouse_public, now list_data_warehouse_public_raw)
+[0m14:00:27.505051 [debug] [ThreadPool]: Using postgres connection "list_data_warehouse_public_raw"
+[0m14:00:27.509050 [debug] [ThreadPool]: On list_data_warehouse_public_raw: BEGIN
+[0m14:00:27.512458 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m14:00:27.539202 [debug] [ThreadPool]: SQL status: BEGIN in 0.027 seconds
+[0m14:00:27.543139 [debug] [ThreadPool]: Using postgres connection "list_data_warehouse_public_raw"
+[0m14:00:27.546655 [debug] [ThreadPool]: On list_data_warehouse_public_raw: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "connection_name": "list_data_warehouse_public_raw"} */
+select
+      'data_warehouse' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'public_raw'
+    union all
+    select
+      'data_warehouse' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'public_raw'
+    union all
+    select
+      'data_warehouse' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'public_raw'
+  
+[0m14:00:27.569004 [debug] [ThreadPool]: SQL status: SELECT 6 in 0.019 seconds
+[0m14:00:27.575776 [debug] [ThreadPool]: On list_data_warehouse_public_raw: ROLLBACK
+[0m14:00:27.579790 [debug] [ThreadPool]: On list_data_warehouse_public_raw: Close
+[0m14:00:27.596269 [debug] [MainThread]: Using postgres connection "master"
+[0m14:00:27.598233 [debug] [MainThread]: On master: BEGIN
+[0m14:00:27.599871 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m14:00:27.611759 [debug] [MainThread]: SQL status: BEGIN in 0.012 seconds
+[0m14:00:27.613654 [debug] [MainThread]: Using postgres connection "master"
+[0m14:00:27.615408 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m14:00:27.626528 [debug] [MainThread]: SQL status: SELECT 10 in 0.009 seconds
+[0m14:00:27.631903 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '96ef3cfa-c00e-4db0-8f34-8a7eb3d972f8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c1baed929b0>]}
+[0m14:00:27.633835 [debug] [MainThread]: On master: ROLLBACK
+[0m14:00:27.645688 [debug] [MainThread]: Using postgres connection "master"
+[0m14:00:27.651970 [debug] [MainThread]: On master: BEGIN
+[0m14:00:27.657645 [debug] [MainThread]: SQL status: BEGIN in 0.001 seconds
+[0m14:00:27.661246 [debug] [MainThread]: On master: COMMIT
+[0m14:00:27.663655 [debug] [MainThread]: Using postgres connection "master"
+[0m14:00:27.665973 [debug] [MainThread]: On master: COMMIT
+[0m14:00:27.669307 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m14:00:27.671820 [debug] [MainThread]: On master: Close
+[0m14:00:27.674650 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m14:00:27.677416 [info ] [MainThread]: 
+[0m14:00:27.719755 [debug] [Thread-1 (]: Began running node model.senegal_export.stg_campagne
+[0m14:00:27.723166 [info ] [Thread-1 (]: 1 of 7 START sql view model public.stg_campagne ................................ [RUN]
+[0m14:00:27.725956 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_data_warehouse_public_raw, now model.senegal_export.stg_campagne)
+[0m14:00:27.728263 [debug] [Thread-1 (]: Began compiling node model.senegal_export.stg_campagne
+[0m14:00:27.758604 [debug] [Thread-1 (]: Writing injected SQL for node "model.senegal_export.stg_campagne"
+[0m14:00:27.796377 [debug] [Thread-1 (]: Began executing node model.senegal_export.stg_campagne
+[0m14:00:27.890219 [debug] [Thread-1 (]: Writing runtime sql for node "model.senegal_export.stg_campagne"
+[0m14:00:27.920178 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_campagne"
+[0m14:00:27.924226 [debug] [Thread-1 (]: On model.senegal_export.stg_campagne: BEGIN
+[0m14:00:27.928366 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:00:27.953295 [debug] [Thread-1 (]: SQL status: BEGIN in 0.025 seconds
+[0m14:00:27.957407 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_campagne"
+[0m14:00:27.960850 [debug] [Thread-1 (]: On model.senegal_export.stg_campagne: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_campagne"} */
+
+  create view "data_warehouse"."public"."stg_campagne__dbt_tmp"
+    
+    
+  as (
+    -- models/staging/stg_campagne.sql
+WITH source AS (
+    SELECT * FROM "data_warehouse"."public_raw"."raw_campagne"
+)
+SELECT
+    id_campagne, 
+    id_parcelle,
+    id_produit,
+    id_meteo,
+    date_id,
+    CAST(NULLIF(tonnage_recolte, 'NA') AS FLOAT) AS tonnage_recolte,
+    CAST(NULLIF(tonnage_exporte, 'NA') AS FLOAT) AS tonnage_exporte,
+    
+    CASE 
+        WHEN devise_origine = 'EUR' THEN CAST(NULLIF(cout_intrants_devise, 'NA') AS FLOAT) * 655.95
+        WHEN devise_origine = 'USD' THEN CAST(NULLIF(cout_intrants_devise, 'NA') AS FLOAT) * 600
+        ELSE CAST(NULLIF(cout_intrants_devise, 'NA') AS FLOAT)
+    END AS cout_intrants_fcfa
+FROM source
+  );
+[0m14:00:27.981924 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.018 seconds
+[0m14:00:28.001665 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_campagne"
+[0m14:00:28.005389 [debug] [Thread-1 (]: On model.senegal_export.stg_campagne: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_campagne"} */
+alter table "data_warehouse"."public"."stg_campagne" rename to "stg_campagne__dbt_backup"
+[0m14:00:28.011865 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.003 seconds
+[0m14:00:28.022734 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_campagne"
+[0m14:00:28.026299 [debug] [Thread-1 (]: On model.senegal_export.stg_campagne: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_campagne"} */
+alter table "data_warehouse"."public"."stg_campagne__dbt_tmp" rename to "stg_campagne"
+[0m14:00:28.031678 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.002 seconds
+[0m14:00:28.099807 [debug] [Thread-1 (]: On model.senegal_export.stg_campagne: COMMIT
+[0m14:00:28.102264 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_campagne"
+[0m14:00:28.104491 [debug] [Thread-1 (]: On model.senegal_export.stg_campagne: COMMIT
+[0m14:00:28.116763 [debug] [Thread-1 (]: SQL status: COMMIT in 0.006 seconds
+[0m14:00:28.155367 [debug] [Thread-1 (]: Applying DROP to: "data_warehouse"."public"."stg_campagne__dbt_backup"
+[0m14:00:28.169468 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_campagne"
+[0m14:00:28.172274 [debug] [Thread-1 (]: On model.senegal_export.stg_campagne: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_campagne"} */
+drop view if exists "data_warehouse"."public"."stg_campagne__dbt_backup" cascade
+[0m14:00:28.207817 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.033 seconds
+[0m14:00:28.220979 [debug] [Thread-1 (]: On model.senegal_export.stg_campagne: Close
+[0m14:00:28.228514 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '96ef3cfa-c00e-4db0-8f34-8a7eb3d972f8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c1bae1ca800>]}
+[0m14:00:28.232254 [info ] [Thread-1 (]: 1 of 7 OK created sql view model public.stg_campagne ........................... [[32mCREATE VIEW[0m in 0.50s]
+[0m14:00:28.235646 [debug] [Thread-1 (]: Finished running node model.senegal_export.stg_campagne
+[0m14:00:28.238227 [debug] [Thread-1 (]: Began running node model.senegal_export.stg_dates
+[0m14:00:28.241541 [info ] [Thread-1 (]: 2 of 7 START sql view model public.stg_dates ................................... [RUN]
+[0m14:00:28.244804 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.senegal_export.stg_campagne, now model.senegal_export.stg_dates)
+[0m14:00:28.246974 [debug] [Thread-1 (]: Began compiling node model.senegal_export.stg_dates
+[0m14:00:28.253229 [debug] [Thread-1 (]: Writing injected SQL for node "model.senegal_export.stg_dates"
+[0m14:00:28.305895 [debug] [Thread-1 (]: Began executing node model.senegal_export.stg_dates
+[0m14:00:28.313356 [debug] [Thread-1 (]: Writing runtime sql for node "model.senegal_export.stg_dates"
+[0m14:00:28.325361 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_dates"
+[0m14:00:28.326768 [debug] [Thread-1 (]: On model.senegal_export.stg_dates: BEGIN
+[0m14:00:28.328137 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:00:28.338420 [debug] [Thread-1 (]: SQL status: BEGIN in 0.010 seconds
+[0m14:00:28.339866 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_dates"
+[0m14:00:28.341262 [debug] [Thread-1 (]: On model.senegal_export.stg_dates: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_dates"} */
+
+  create view "data_warehouse"."public"."stg_dates__dbt_tmp"
+    
+    
+  as (
+    WITH source AS (
+    SELECT * FROM "data_warehouse"."public_raw"."raw_calendrier"
+    WHERE date_id IS NOT NULL
+),
+
+base_dates AS (
+    -- On crée la vraie date une seule fois pour s'en servir ensuite
+    SELECT 
+        date_id,
+        TO_DATE(CAST(date_id AS TEXT), 'YYYYMMDD') AS date_standard_date
+    FROM source
+)
+
+SELECT 
+    date_id,
+    
+    -- La date au format texte 'DD-MM-AAAA' comme tu l'as demandé
+    TO_CHAR(date_standard_date, 'DD-MM-YYYY') AS date_standard_str,
+    
+    -- La date au format natif (utile pour les jointures)
+    date_standard_date,
+    
+    -- ===== MOIS =====
+    EXTRACT(MONTH FROM date_standard_date)::INTEGER AS mois_id,
+    TO_CHAR(date_standard_date, 'MM') AS mois_format_str,       -- ex: '07', '08'
+    TO_CHAR(date_standard_date, 'Month') AS mois_nom,           -- ex: 'July     ', 'August   '
+    
+    -- ===== TRIMESTRE =====
+    EXTRACT(QUARTER FROM date_standard_date)::INTEGER AS trimestre_id,
+    'T' || EXTRACT(QUARTER FROM date_standard_date) AS trimestre_nom, -- ex: 'T3', 'T4'
+    
+    -- ===== SEMESTRE =====
+    CASE 
+        WHEN EXTRACT(MONTH FROM date_standard_date) <= 6 THEN 1 
+        ELSE 2 
+    END AS semestre_id,
+    CASE 
+        WHEN EXTRACT(MONTH FROM date_standard_date) <= 6 THEN 'S1' 
+        ELSE 'S2' 
+    END AS semestre_nom
+
+FROM base_dates
+  );
+[0m14:00:28.350166 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.008 seconds
+[0m14:00:28.374468 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_dates"
+[0m14:00:28.379947 [debug] [Thread-1 (]: On model.senegal_export.stg_dates: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_dates"} */
+alter table "data_warehouse"."public"."stg_dates" rename to "stg_dates__dbt_backup"
+[0m14:00:28.387034 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.003 seconds
+[0m14:00:28.398538 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_dates"
+[0m14:00:28.402243 [debug] [Thread-1 (]: On model.senegal_export.stg_dates: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_dates"} */
+alter table "data_warehouse"."public"."stg_dates__dbt_tmp" rename to "stg_dates"
+[0m14:00:28.407621 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.002 seconds
+[0m14:00:28.413487 [debug] [Thread-1 (]: On model.senegal_export.stg_dates: COMMIT
+[0m14:00:28.417091 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_dates"
+[0m14:00:28.420535 [debug] [Thread-1 (]: On model.senegal_export.stg_dates: COMMIT
+[0m14:00:28.429229 [debug] [Thread-1 (]: SQL status: COMMIT in 0.004 seconds
+[0m14:00:28.437203 [debug] [Thread-1 (]: Applying DROP to: "data_warehouse"."public"."stg_dates__dbt_backup"
+[0m14:00:28.440107 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_dates"
+[0m14:00:28.442676 [debug] [Thread-1 (]: On model.senegal_export.stg_dates: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_dates"} */
+drop view if exists "data_warehouse"."public"."stg_dates__dbt_backup" cascade
+[0m14:00:28.456106 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.010 seconds
+[0m14:00:28.461495 [debug] [Thread-1 (]: On model.senegal_export.stg_dates: Close
+[0m14:00:28.465400 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '96ef3cfa-c00e-4db0-8f34-8a7eb3d972f8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c1bae1ca350>]}
+[0m14:00:28.468610 [info ] [Thread-1 (]: 2 of 7 OK created sql view model public.stg_dates .............................. [[32mCREATE VIEW[0m in 0.22s]
+[0m14:00:28.471949 [debug] [Thread-1 (]: Finished running node model.senegal_export.stg_dates
+[0m14:00:28.475216 [debug] [Thread-1 (]: Began running node model.senegal_export.stg_fournisseurs
+[0m14:00:28.478254 [info ] [Thread-1 (]: 3 of 7 START sql view model public.stg_fournisseurs ............................ [RUN]
+[0m14:00:28.481298 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.senegal_export.stg_dates, now model.senegal_export.stg_fournisseurs)
+[0m14:00:28.484347 [debug] [Thread-1 (]: Began compiling node model.senegal_export.stg_fournisseurs
+[0m14:00:28.495654 [debug] [Thread-1 (]: Writing injected SQL for node "model.senegal_export.stg_fournisseurs"
+[0m14:00:28.522690 [debug] [Thread-1 (]: Began executing node model.senegal_export.stg_fournisseurs
+[0m14:00:28.540482 [debug] [Thread-1 (]: Writing runtime sql for node "model.senegal_export.stg_fournisseurs"
+[0m14:00:28.562843 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_fournisseurs"
+[0m14:00:28.565126 [debug] [Thread-1 (]: On model.senegal_export.stg_fournisseurs: BEGIN
+[0m14:00:28.567252 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:00:28.610486 [debug] [Thread-1 (]: SQL status: BEGIN in 0.043 seconds
+[0m14:00:28.614656 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_fournisseurs"
+[0m14:00:28.618367 [debug] [Thread-1 (]: On model.senegal_export.stg_fournisseurs: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_fournisseurs"} */
+
+  create view "data_warehouse"."public"."stg_fournisseurs__dbt_tmp"
+    
+    
+  as (
+    with source as (
+
+    select
+        id_fournisseur::int     as supplier_id,
+        nom_fournisseur         as supplier_name,
+        type_engrais_fourni     as fertilizer_type
+    from "data_warehouse"."public_raw"."raw_fournisseurs"
+
+)
+
+select * from source
+  );
+[0m14:00:28.626643 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.005 seconds
+[0m14:00:28.635919 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_fournisseurs"
+[0m14:00:28.638271 [debug] [Thread-1 (]: On model.senegal_export.stg_fournisseurs: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_fournisseurs"} */
+alter table "data_warehouse"."public"."stg_fournisseurs" rename to "stg_fournisseurs__dbt_backup"
+[0m14:00:28.653365 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.007 seconds
+[0m14:00:28.673417 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_fournisseurs"
+[0m14:00:28.677845 [debug] [Thread-1 (]: On model.senegal_export.stg_fournisseurs: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_fournisseurs"} */
+alter table "data_warehouse"."public"."stg_fournisseurs__dbt_tmp" rename to "stg_fournisseurs"
+[0m14:00:28.683710 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.002 seconds
+[0m14:00:28.692737 [debug] [Thread-1 (]: On model.senegal_export.stg_fournisseurs: COMMIT
+[0m14:00:28.695275 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_fournisseurs"
+[0m14:00:28.697554 [debug] [Thread-1 (]: On model.senegal_export.stg_fournisseurs: COMMIT
+[0m14:00:28.703683 [debug] [Thread-1 (]: SQL status: COMMIT in 0.004 seconds
+[0m14:00:28.710096 [debug] [Thread-1 (]: Applying DROP to: "data_warehouse"."public"."stg_fournisseurs__dbt_backup"
+[0m14:00:28.712528 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_fournisseurs"
+[0m14:00:28.714430 [debug] [Thread-1 (]: On model.senegal_export.stg_fournisseurs: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_fournisseurs"} */
+drop view if exists "data_warehouse"."public"."stg_fournisseurs__dbt_backup" cascade
+[0m14:00:28.723718 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.007 seconds
+[0m14:00:28.727366 [debug] [Thread-1 (]: On model.senegal_export.stg_fournisseurs: Close
+[0m14:00:28.729697 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '96ef3cfa-c00e-4db0-8f34-8a7eb3d972f8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c1bae1c9cf0>]}
+[0m14:00:28.732124 [info ] [Thread-1 (]: 3 of 7 OK created sql view model public.stg_fournisseurs ....................... [[32mCREATE VIEW[0m in 0.25s]
+[0m14:00:28.734840 [debug] [Thread-1 (]: Finished running node model.senegal_export.stg_fournisseurs
+[0m14:00:28.736945 [debug] [Thread-1 (]: Began running node model.senegal_export.stg_meteo
+[0m14:00:28.739263 [info ] [Thread-1 (]: 4 of 7 START sql view model public.stg_meteo ................................... [RUN]
+[0m14:00:28.741766 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.senegal_export.stg_fournisseurs, now model.senegal_export.stg_meteo)
+[0m14:00:28.743943 [debug] [Thread-1 (]: Began compiling node model.senegal_export.stg_meteo
+[0m14:00:28.749765 [debug] [Thread-1 (]: Writing injected SQL for node "model.senegal_export.stg_meteo"
+[0m14:00:28.772768 [debug] [Thread-1 (]: Began executing node model.senegal_export.stg_meteo
+[0m14:00:28.781458 [debug] [Thread-1 (]: Writing runtime sql for node "model.senegal_export.stg_meteo"
+[0m14:00:28.803617 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_meteo"
+[0m14:00:28.805540 [debug] [Thread-1 (]: On model.senegal_export.stg_meteo: BEGIN
+[0m14:00:28.806963 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:00:28.818578 [debug] [Thread-1 (]: SQL status: BEGIN in 0.011 seconds
+[0m14:00:28.833291 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_meteo"
+[0m14:00:28.840894 [debug] [Thread-1 (]: On model.senegal_export.stg_meteo: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_meteo"} */
+
+  create view "data_warehouse"."public"."stg_meteo__dbt_tmp"
+    
+    
+  as (
+    WITH source AS (
+    SELECT * FROM "data_warehouse"."public_raw"."raw_meteo"
+)
+SELECT
+    CAST(id_meteo AS INT) AS id_meteo,
+    CAST(pluviometrie_mm AS FLOAT) AS pluviometrie_mm,
+    CAST(temperature_moyenne_celsius AS FLOAT) AS temperature_moyenne_celsius
+FROM source
+WHERE id_meteo IS NOT NULL -- Suppression des lignes vides
+  );
+[0m14:00:28.862154 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.015 seconds
+[0m14:00:28.889362 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_meteo"
+[0m14:00:28.895843 [debug] [Thread-1 (]: On model.senegal_export.stg_meteo: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_meteo"} */
+alter table "data_warehouse"."public"."stg_meteo" rename to "stg_meteo__dbt_backup"
+[0m14:00:28.905261 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.003 seconds
+[0m14:00:28.924813 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_meteo"
+[0m14:00:28.931499 [debug] [Thread-1 (]: On model.senegal_export.stg_meteo: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_meteo"} */
+alter table "data_warehouse"."public"."stg_meteo__dbt_tmp" rename to "stg_meteo"
+[0m14:00:28.941503 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.003 seconds
+[0m14:00:28.953530 [debug] [Thread-1 (]: On model.senegal_export.stg_meteo: COMMIT
+[0m14:00:28.960137 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_meteo"
+[0m14:00:28.968654 [debug] [Thread-1 (]: On model.senegal_export.stg_meteo: COMMIT
+[0m14:00:28.984890 [debug] [Thread-1 (]: SQL status: COMMIT in 0.008 seconds
+[0m14:00:29.010536 [debug] [Thread-1 (]: Applying DROP to: "data_warehouse"."public"."stg_meteo__dbt_backup"
+[0m14:00:29.016167 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_meteo"
+[0m14:00:29.020891 [debug] [Thread-1 (]: On model.senegal_export.stg_meteo: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_meteo"} */
+drop view if exists "data_warehouse"."public"."stg_meteo__dbt_backup" cascade
+[0m14:00:29.037382 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.012 seconds
+[0m14:00:29.046626 [debug] [Thread-1 (]: On model.senegal_export.stg_meteo: Close
+[0m14:00:29.052547 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '96ef3cfa-c00e-4db0-8f34-8a7eb3d972f8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c1bae1c9bd0>]}
+[0m14:00:29.057944 [info ] [Thread-1 (]: 4 of 7 OK created sql view model public.stg_meteo .............................. [[32mCREATE VIEW[0m in 0.31s]
+[0m14:00:29.063608 [debug] [Thread-1 (]: Finished running node model.senegal_export.stg_meteo
+[0m14:00:29.068317 [debug] [Thread-1 (]: Began running node model.senegal_export.stg_parcelles
+[0m14:00:29.073988 [info ] [Thread-1 (]: 5 of 7 START sql view model public.stg_parcelles ............................... [RUN]
+[0m14:00:29.079323 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.senegal_export.stg_meteo, now model.senegal_export.stg_parcelles)
+[0m14:00:29.083952 [debug] [Thread-1 (]: Began compiling node model.senegal_export.stg_parcelles
+[0m14:00:29.097262 [debug] [Thread-1 (]: Writing injected SQL for node "model.senegal_export.stg_parcelles"
+[0m14:00:29.125931 [debug] [Thread-1 (]: Began executing node model.senegal_export.stg_parcelles
+[0m14:00:29.136068 [debug] [Thread-1 (]: Writing runtime sql for node "model.senegal_export.stg_parcelles"
+[0m14:00:29.168584 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_parcelles"
+[0m14:00:29.172371 [debug] [Thread-1 (]: On model.senegal_export.stg_parcelles: BEGIN
+[0m14:00:29.176080 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:00:29.202742 [debug] [Thread-1 (]: SQL status: BEGIN in 0.026 seconds
+[0m14:00:29.206712 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_parcelles"
+[0m14:00:29.210462 [debug] [Thread-1 (]: On model.senegal_export.stg_parcelles: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_parcelles"} */
+
+  create view "data_warehouse"."public"."stg_parcelles__dbt_tmp"
+    
+    
+  as (
+    WITH source AS (
+    SELECT * FROM "data_warehouse"."public_raw"."raw_parcelles"
+)
+SELECT
+    CAST(id_parcelle AS INT) AS id_parcelle,
+    CAST(surface_hectares AS FLOAT) AS surface_hectares,
+    localisation,
+    type_sol
+FROM source
+WHERE id_parcelle IS NOT NULL -- Suppression des lignes vides
+  );
+[0m14:00:29.221042 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.007 seconds
+[0m14:00:29.233988 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_parcelles"
+[0m14:00:29.237073 [debug] [Thread-1 (]: On model.senegal_export.stg_parcelles: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_parcelles"} */
+alter table "data_warehouse"."public"."stg_parcelles" rename to "stg_parcelles__dbt_backup"
+[0m14:00:29.241396 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m14:00:29.251820 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_parcelles"
+[0m14:00:29.255314 [debug] [Thread-1 (]: On model.senegal_export.stg_parcelles: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_parcelles"} */
+alter table "data_warehouse"."public"."stg_parcelles__dbt_tmp" rename to "stg_parcelles"
+[0m14:00:29.260024 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.002 seconds
+[0m14:00:29.265430 [debug] [Thread-1 (]: On model.senegal_export.stg_parcelles: COMMIT
+[0m14:00:29.268866 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_parcelles"
+[0m14:00:29.271904 [debug] [Thread-1 (]: On model.senegal_export.stg_parcelles: COMMIT
+[0m14:00:29.278713 [debug] [Thread-1 (]: SQL status: COMMIT in 0.004 seconds
+[0m14:00:29.287183 [debug] [Thread-1 (]: Applying DROP to: "data_warehouse"."public"."stg_parcelles__dbt_backup"
+[0m14:00:29.291450 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_parcelles"
+[0m14:00:29.294721 [debug] [Thread-1 (]: On model.senegal_export.stg_parcelles: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_parcelles"} */
+drop view if exists "data_warehouse"."public"."stg_parcelles__dbt_backup" cascade
+[0m14:00:29.307175 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.009 seconds
+[0m14:00:29.315169 [debug] [Thread-1 (]: On model.senegal_export.stg_parcelles: Close
+[0m14:00:29.319893 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '96ef3cfa-c00e-4db0-8f34-8a7eb3d972f8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c1bae19e080>]}
+[0m14:00:29.324277 [info ] [Thread-1 (]: 5 of 7 OK created sql view model public.stg_parcelles .......................... [[32mCREATE VIEW[0m in 0.24s]
+[0m14:00:29.328810 [debug] [Thread-1 (]: Finished running node model.senegal_export.stg_parcelles
+[0m14:00:29.332769 [debug] [Thread-1 (]: Began running node model.senegal_export.stg_produits
+[0m14:00:29.336728 [info ] [Thread-1 (]: 6 of 7 START sql view model public.stg_produits ................................ [RUN]
+[0m14:00:29.340518 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.senegal_export.stg_parcelles, now model.senegal_export.stg_produits)
+[0m14:00:29.344249 [debug] [Thread-1 (]: Began compiling node model.senegal_export.stg_produits
+[0m14:00:29.355276 [debug] [Thread-1 (]: Writing injected SQL for node "model.senegal_export.stg_produits"
+[0m14:00:29.391995 [debug] [Thread-1 (]: Began executing node model.senegal_export.stg_produits
+[0m14:00:29.405641 [debug] [Thread-1 (]: Writing runtime sql for node "model.senegal_export.stg_produits"
+[0m14:00:29.445474 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_produits"
+[0m14:00:29.449354 [debug] [Thread-1 (]: On model.senegal_export.stg_produits: BEGIN
+[0m14:00:29.453142 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:00:29.479228 [debug] [Thread-1 (]: SQL status: BEGIN in 0.026 seconds
+[0m14:00:29.483169 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_produits"
+[0m14:00:29.486925 [debug] [Thread-1 (]: On model.senegal_export.stg_produits: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_produits"} */
+
+  create view "data_warehouse"."public"."stg_produits__dbt_tmp"
+    
+    
+  as (
+    WITH source AS (
+    SELECT * FROM "data_warehouse"."public_raw"."raw_produits"
+)
+SELECT
+    CAST(id_produit AS INT) AS id_produit,
+    nom_produit,
+    variete
+FROM source
+WHERE id_produit IS NOT NULL -- Suppression des lignes vides
+  );
+[0m14:00:29.499086 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.008 seconds
+[0m14:00:29.511554 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_produits"
+[0m14:00:29.515596 [debug] [Thread-1 (]: On model.senegal_export.stg_produits: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_produits"} */
+alter table "data_warehouse"."public"."stg_produits" rename to "stg_produits__dbt_backup"
+[0m14:00:29.520802 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m14:00:29.534317 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_produits"
+[0m14:00:29.538208 [debug] [Thread-1 (]: On model.senegal_export.stg_produits: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_produits"} */
+alter table "data_warehouse"."public"."stg_produits__dbt_tmp" rename to "stg_produits"
+[0m14:00:29.542850 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.001 seconds
+[0m14:00:29.547861 [debug] [Thread-1 (]: On model.senegal_export.stg_produits: COMMIT
+[0m14:00:29.550744 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_produits"
+[0m14:00:29.553589 [debug] [Thread-1 (]: On model.senegal_export.stg_produits: COMMIT
+[0m14:00:29.561214 [debug] [Thread-1 (]: SQL status: COMMIT in 0.005 seconds
+[0m14:00:29.568448 [debug] [Thread-1 (]: Applying DROP to: "data_warehouse"."public"."stg_produits__dbt_backup"
+[0m14:00:29.571504 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.stg_produits"
+[0m14:00:29.574279 [debug] [Thread-1 (]: On model.senegal_export.stg_produits: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.stg_produits"} */
+drop view if exists "data_warehouse"."public"."stg_produits__dbt_backup" cascade
+[0m14:00:29.584903 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.008 seconds
+[0m14:00:29.591262 [debug] [Thread-1 (]: On model.senegal_export.stg_produits: Close
+[0m14:00:29.596085 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '96ef3cfa-c00e-4db0-8f34-8a7eb3d972f8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c1bb0cc1e70>]}
+[0m14:00:29.600531 [info ] [Thread-1 (]: 6 of 7 OK created sql view model public.stg_produits ........................... [[32mCREATE VIEW[0m in 0.26s]
+[0m14:00:29.604852 [debug] [Thread-1 (]: Finished running node model.senegal_export.stg_produits
+[0m14:00:29.608683 [debug] [Thread-1 (]: Began running node model.senegal_export.fct_campagne_performances
+[0m14:00:29.612789 [info ] [Thread-1 (]: 7 of 7 START sql view model public.fct_campagne_performances ................... [RUN]
+[0m14:00:29.617158 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.senegal_export.stg_produits, now model.senegal_export.fct_campagne_performances)
+[0m14:00:29.620975 [debug] [Thread-1 (]: Began compiling node model.senegal_export.fct_campagne_performances
+[0m14:00:29.634139 [debug] [Thread-1 (]: Writing injected SQL for node "model.senegal_export.fct_campagne_performances"
+[0m14:00:29.666057 [debug] [Thread-1 (]: Began executing node model.senegal_export.fct_campagne_performances
+[0m14:00:29.676481 [debug] [Thread-1 (]: Writing runtime sql for node "model.senegal_export.fct_campagne_performances"
+[0m14:00:29.712748 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.fct_campagne_performances"
+[0m14:00:29.718764 [debug] [Thread-1 (]: On model.senegal_export.fct_campagne_performances: BEGIN
+[0m14:00:29.722544 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m14:00:29.743105 [debug] [Thread-1 (]: SQL status: BEGIN in 0.020 seconds
+[0m14:00:29.746412 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.fct_campagne_performances"
+[0m14:00:29.750037 [debug] [Thread-1 (]: On model.senegal_export.fct_campagne_performances: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.fct_campagne_performances"} */
+
+  create view "data_warehouse"."public"."fct_campagne_performances__dbt_tmp"
+    
+    
+  as (
+    WITH stg_campagne AS (
+    SELECT * FROM "data_warehouse"."public"."stg_campagne"
+),
+parcelles AS (
+    SELECT * FROM "data_warehouse"."public_raw"."raw_parcelles"
+),
+produits AS (
+    SELECT * FROM "data_warehouse"."public_raw"."raw_produits"
+),
+meteo AS (
+    SELECT * FROM "data_warehouse"."public_raw"."raw_meteo"
+)
+
+SELECT
+    c.id_campagne,
+    p.nom_produit,
+    p.variete,
+    pa.localisation,
+    -- Q1: Rendement (Tonnage / Surface)
+    c.tonnage_recolte / NULLIF(pa.surface_hectares, 0) AS rendement_par_hectare,
+    -- Q2: Taux de perte
+    ((c.tonnage_recolte - c.tonnage_exporte) / NULLIF(c.tonnage_recolte, 0)) * 100 AS taux_perte_pourcentage,
+    -- Q3: Influence Pluviométrie
+    m.pluviometrie_mm,
+    -- Q4: Coût en FCFA
+    c.cout_intrants_fcfa
+FROM stg_campagne c
+LEFT JOIN parcelles pa ON c.id_parcelle = pa.id_parcelle
+LEFT JOIN produits p ON c.id_produit = p.id_produit
+LEFT JOIN meteo m ON c.id_meteo = m.id_meteo
+  );
+[0m14:00:29.769140 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.016 seconds
+[0m14:00:29.778927 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.fct_campagne_performances"
+[0m14:00:29.782568 [debug] [Thread-1 (]: On model.senegal_export.fct_campagne_performances: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.fct_campagne_performances"} */
+alter table "data_warehouse"."public"."fct_campagne_performances__dbt_tmp" rename to "fct_campagne_performances"
+[0m14:00:29.787816 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.002 seconds
+[0m14:00:29.792702 [debug] [Thread-1 (]: On model.senegal_export.fct_campagne_performances: COMMIT
+[0m14:00:29.795906 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.fct_campagne_performances"
+[0m14:00:29.799226 [debug] [Thread-1 (]: On model.senegal_export.fct_campagne_performances: COMMIT
+[0m14:00:29.809621 [debug] [Thread-1 (]: SQL status: COMMIT in 0.007 seconds
+[0m14:00:29.817999 [debug] [Thread-1 (]: Applying DROP to: "data_warehouse"."public"."fct_campagne_performances__dbt_backup"
+[0m14:00:29.821615 [debug] [Thread-1 (]: Using postgres connection "model.senegal_export.fct_campagne_performances"
+[0m14:00:29.824704 [debug] [Thread-1 (]: On model.senegal_export.fct_campagne_performances: /* {"app": "dbt", "dbt_version": "1.8.7", "profile_name": "senegal_export", "target_name": "dev", "node_id": "model.senegal_export.fct_campagne_performances"} */
+drop view if exists "data_warehouse"."public"."fct_campagne_performances__dbt_backup" cascade
+[0m14:00:29.828672 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.001 seconds
+[0m14:00:29.834417 [debug] [Thread-1 (]: On model.senegal_export.fct_campagne_performances: Close
+[0m14:00:29.838188 [debug] [Thread-1 (]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '96ef3cfa-c00e-4db0-8f34-8a7eb3d972f8', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c1bae19e080>]}
+[0m14:00:29.842109 [info ] [Thread-1 (]: 7 of 7 OK created sql view model public.fct_campagne_performances .............. [[32mCREATE VIEW[0m in 0.22s]
+[0m14:00:29.846213 [debug] [Thread-1 (]: Finished running node model.senegal_export.fct_campagne_performances
+[0m14:00:29.851692 [debug] [MainThread]: Using postgres connection "master"
+[0m14:00:29.854024 [debug] [MainThread]: On master: BEGIN
+[0m14:00:29.856261 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m14:00:29.874380 [debug] [MainThread]: SQL status: BEGIN in 0.018 seconds
+[0m14:00:29.878323 [debug] [MainThread]: On master: COMMIT
+[0m14:00:29.897675 [debug] [MainThread]: Using postgres connection "master"
+[0m14:00:29.903293 [debug] [MainThread]: On master: COMMIT
+[0m14:00:29.908825 [debug] [MainThread]: SQL status: COMMIT in 0.001 seconds
+[0m14:00:29.912193 [debug] [MainThread]: On master: Close
+[0m14:00:29.915575 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m14:00:29.920987 [debug] [MainThread]: Connection 'model.senegal_export.fct_campagne_performances' was properly closed.
+[0m14:00:29.924139 [info ] [MainThread]: 
+[0m14:00:29.926696 [info ] [MainThread]: Finished running 7 view models in 0 hours 0 minutes and 2.58 seconds (2.58s).
+[0m14:00:29.931971 [debug] [MainThread]: Command end result
+[0m14:00:30.148400 [info ] [MainThread]: 
+[0m14:00:30.150692 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m14:00:30.152948 [info ] [MainThread]: 
+[0m14:00:30.156857 [info ] [MainThread]: Done. PASS=7 WARN=0 ERROR=0 SKIP=0 TOTAL=7
+[0m14:00:30.171053 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 8.614013, "process_user_time": 5.503089, "process_kernel_time": 0.77974, "process_mem_max_rss": "152084", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m14:00:30.176584 [debug] [MainThread]: Command `dbt run` succeeded at 14:00:30.176040 after 8.62 seconds
+[0m14:00:30.180429 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c1bb2f38c40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c1bb1097220>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7c1bb0e6c850>]}
+[0m14:00:30.184402 [debug] [MainThread]: Flushing usage events

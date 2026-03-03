@@ -1,9 +1,7 @@
 
     
     
-    
-    create table "data_warehouse"."public_raw"."raw_campagne" (id_campagne integer,id_parcelle integer,id_produit integer,id_meteo integer,id_fournisseur integer,date_id integer,tonnage_recolte text,tonnage_exporte text,cout_intrants_devise text,devise_origine text)
-  ;
+    truncate table "data_warehouse"."public_raw"."raw_campagne";
     -- dbt seed --
     
           insert into "data_warehouse"."public_raw"."raw_campagne" (id_campagne, id_parcelle, id_produit, id_meteo, id_fournisseur, date_id, tonnage_recolte, tonnage_exporte, cout_intrants_devise, devise_origine) values

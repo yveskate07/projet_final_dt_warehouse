@@ -1,9 +1,7 @@
 
     
     
-    
-    create table "data_warehouse"."public_raw"."raw_meteo" (id_meteo integer,pluviometrie_mm float8,temperature_moyenne_celsius float8)
-  ;
+    truncate table "data_warehouse"."public_raw"."raw_meteo";
     -- dbt seed --
     
           insert into "data_warehouse"."public_raw"."raw_meteo" (id_meteo, pluviometrie_mm, temperature_moyenne_celsius) values

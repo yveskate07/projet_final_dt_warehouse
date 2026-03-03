@@ -1,9 +1,7 @@
 
     
     
-    
-    create table "data_warehouse"."public_raw"."raw_fournisseurs" (id_fournisseur integer,nom_fournisseur text,type_engrais_fourni text)
-  ;
+    truncate table "data_warehouse"."public_raw"."raw_fournisseurs";
     -- dbt seed --
     
           insert into "data_warehouse"."public_raw"."raw_fournisseurs" (id_fournisseur, nom_fournisseur, type_engrais_fourni) values
