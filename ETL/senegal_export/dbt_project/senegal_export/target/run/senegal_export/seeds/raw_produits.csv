@@ -1,7 +1,9 @@
 
     
     
-    truncate table "data_warehouse"."public_raw"."raw_produits";
+    
+    create table "data_warehouse"."public_raw"."raw_produits" (id_produit integer,nom_produit text,variete text)
+  ;
     -- dbt seed --
     
           insert into "data_warehouse"."public_raw"."raw_produits" (id_produit, nom_produit, variete) values
